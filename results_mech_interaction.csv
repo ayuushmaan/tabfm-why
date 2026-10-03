@@ -1,0 +1,13 @@
+probe,setting,model,acc
+interaction,linear,TabPFN,0.9944444444444445
+interaction,linear,TabICL,0.9972222222222222
+interaction,linear,LightGBM,0.9722222222222222
+interaction,linear,RandomForest,0.9611111111111111
+interaction,linear,Linear,0.9944444444444445
+interaction,linear,MLP,0.9805555555555555
+interaction,xor,TabPFN,0.9944444444444445
+interaction,xor,TabICL,0.9666666666666667
+interaction,xor,LightGBM,1.0
+interaction,xor,RandomForest,0.9888888888888889
+interaction,xor,Linear,0.5111111111111111
+interaction,xor,MLP,0.9222222222222223

@@ -1,0 +1,16 @@
+probe,setting,model,acc
+attrib_agree,TabPFN-vs-TabICL,TabPFN|TabICL,0.7877855422677295
+attrib_agree,TabPFN-vs-LightGBM,TabPFN|LightGBM,0.7284505775290723
+attrib_agree,TabPFN-vs-RandomForest,TabPFN|RandomForest,0.44375
+attrib_agree,TabPFN-vs-Linear,TabPFN|Linear,-0.30651476910743075
+attrib_agree,TabPFN-vs-MLP,TabPFN|MLP,-0.254663297437476
+attrib_agree,TabICL-vs-LightGBM,TabICL|LightGBM,0.6443798763008685
+attrib_agree,TabICL-vs-RandomForest,TabICL|RandomForest,0.4923659639173309
+attrib_agree,TabICL-vs-Linear,TabICL|Linear,-0.16463720699615814
+attrib_agree,TabICL-vs-MLP,TabICL|MLP,-0.1834939608543934
+attrib_agree,LightGBM-vs-RandomForest,LightGBM|RandomForest,0.5185580382410345
+attrib_agree,LightGBM-vs-Linear,LightGBM|Linear,-0.30886994580828375
+attrib_agree,LightGBM-vs-MLP,LightGBM|MLP,0.049080678255487356
+attrib_agree,RandomForest-vs-Linear,RandomForest|Linear,0.3560525095692378
+attrib_agree,RandomForest-vs-MLP,RandomForest|MLP,0.14907119849998599
+attrib_agree,Linear-vs-MLP,Linear|MLP,0.5753873391181111

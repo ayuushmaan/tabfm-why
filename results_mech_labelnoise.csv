@@ -1,0 +1,13 @@
+probe,setting,model,acc
+labelnoise,flip0,TabPFN,0.7748917748917749
+labelnoise,flip0,TabICL,0.7748917748917749
+labelnoise,flip0,LightGBM,0.7792207792207793
+labelnoise,flip0,RandomForest,0.7878787878787878
+labelnoise,flip0,Linear,0.7748917748917749
+labelnoise,flip0,MLP,0.7575757575757576
+labelnoise,flip20,TabPFN,0.8051948051948052
+labelnoise,flip20,TabICL,0.7662337662337663
+labelnoise,flip20,LightGBM,0.7359307359307359
+labelnoise,flip20,RandomForest,0.7575757575757576
+labelnoise,flip20,Linear,0.7619047619047619
+labelnoise,flip20,MLP,0.7705627705627706

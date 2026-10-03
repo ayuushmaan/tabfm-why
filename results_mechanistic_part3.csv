@@ -1,0 +1,35 @@
+probe,setting,model,acc,err
+shortcut,spur,TabPFN,,'Categorical' with dtype category does not support reduction 'median'
+shortcut,spur,TabICL,,'Categorical' with dtype category does not support reduction 'median'
+shortcut,spur,LightGBM,,"Cannot use median strategy with non-numeric data:
+could not convert string to float: 'tested_negative'"
+shortcut,spur,RandomForest,,"Cannot use median strategy with non-numeric data:
+could not convert string to float: 'tested_negative'"
+shortcut,spur,Linear,,"Cannot use median strategy with non-numeric data:
+could not convert string to float: 'tested_negative'"
+shortcut,spur,MLP,,"Cannot use median strategy with non-numeric data:
+could not convert string to float: 'tested_negative'"
+subgroup,vehicle:bus,TabPFN,1.0,
+subgroup,vehicle:opel,TabPFN,0.875,
+subgroup,vehicle:saab,TabPFN,0.7692307692307693,
+subgroup,vehicle:van,TabPFN,1.0,
+subgroup,vehicle:bus,TabICL,1.0,
+subgroup,vehicle:opel,TabICL,0.828125,
+subgroup,vehicle:saab,TabICL,0.6923076923076923,
+subgroup,vehicle:van,TabICL,0.9833333333333333,
+subgroup,vehicle:bus,LightGBM,0.9692307692307692,
+subgroup,vehicle:opel,LightGBM,0.5,
+subgroup,vehicle:saab,LightGBM,0.6,
+subgroup,vehicle:van,LightGBM,0.8833333333333333,
+subgroup,vehicle:bus,RandomForest,1.0,
+subgroup,vehicle:opel,RandomForest,0.515625,
+subgroup,vehicle:saab,RandomForest,0.5538461538461539,
+subgroup,vehicle:van,RandomForest,0.9833333333333333,
+subgroup,vehicle:bus,Linear,0.9230769230769231,
+subgroup,vehicle:opel,Linear,0.609375,
+subgroup,vehicle:saab,Linear,0.7538461538461538,
+subgroup,vehicle:van,Linear,0.9833333333333333,
+subgroup,vehicle:bus,MLP,0.9384615384615385,
+subgroup,vehicle:opel,MLP,0.578125,
+subgroup,vehicle:saab,MLP,0.5076923076923077,
+subgroup,vehicle:van,MLP,1.0,
