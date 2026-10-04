@@ -37,3 +37,24 @@ purge `sys.modules` (`inference/model/utils/limix`) between code-version switche
 
 Dilution probe (diabetes + 20 noise cols): TabDPT 0.792 > TabICL 0.775 > TabPFN 0.771 (borderline, n=231).
 LimiX leads noisy-medical, trails on confusable classes — joint-distribution vs ICL prior contrast.
+
+## Follow-up: dilution stress (50/100 noise cols) — TabDPT hypothesis REJECTED
+
+| noise cols | TabPFN | TabICL | TabDPT | LimiX-2M |
+|---|---|---|---|---|
+| 0 | 0.775 | 0.779 | 0.775 | 0.792 |
+| 50 | 0.771 | 0.784 | 0.779 | 0.775 |
+| 100 | 0.771 | **0.788** | 0.745 | 0.766 |
+
+The 20-col TabDPT edge did not survive stronger dilution — at 100 cols TabDPT drops most (−0.030)
+while TabICL is flat (even +0.009). Verdict: dilution-robustness crown goes to TabICL, not TabDPT.
+Lesson logged: borderline Δ≈0.02 effects on n≈231 must be stressed before becoming claims.
+
+## Mitra usage (resolved)
+
+`TabularPredictor(hyperparameters={"MITRA": {}})` is flaky in this env (read-only array error
+inside `sklearn_interface._train_ensemble`, pandas-3/AutoGluon friction). Reliable path: direct
+`from autogluon.tabular.models.mitra.sklearn_interface import MitraClassifier`, NumPy inputs,
+**int-encoded labels** (`np.bincount` requires ints). Note this is fine-tuning (~50 epochs,
+early stopping, ~1–2 min/fit on GPU), not zero-shot ICL — budget accordingly.
+Mitra diabetes acc: 0.766–0.775 (same tie band).
