@@ -16,6 +16,10 @@ relative patterns trustworthy, absolute mass less so. TabICL weights exact (post
   localizes to final-block heads — (L11,H1) ablation: acc 0.741, opel 0.333, bus/van untouched;
   (L11,H4): saab 0.409; (L11,H5/H3/H7): 0.788-0.800. All other blocks/heads ~= base.
   Early layers are causally redundant for the output.
+- CAUSAL-REFINED (row-split ablation of L11H1 across all call shapes): zeroing train-side only
+  and test-side only EACH collapse opel to 0.333 (acc 0.765 both). The head carries train-test
+  RELATIONAL signal, not a test-side readout — breaking either side breaks the verdict.
+  (An intermediate "no effect" reading was a shape-filter bug missing 5D sdpa calls; corrected.)
 - RETRACTION: a first sweep implicated head 1 in blocks 0-5 (hook-staleness artifact);
   the controlled re-sweep refutes it. Rule adopted: every ablation claim needs a no-op control.
 - One-sentence mechanism: sharp same-class lookup whose confusable-class verdict is rendered
