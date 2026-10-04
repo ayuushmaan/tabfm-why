@@ -1,6 +1,6 @@
 # Mechanism cards v1 — vehicle (seed 0, 761 train / 85 test)
 
-Status: behavioral + attention + probe-lens evidence. No patching yet (causal confirmation pending).
+Status: behavioral + attention + probe-lens + CAUSAL (head ablation) evidence for TabICL.
 Weight caveat: TabPFN test-query weights reconstructed manually (ssmax applied, /8 scale assumed);
 relative patterns trustworthy, absolute mass less so. TabICL weights exact (post-RoPE/ssmax Q/K).
 
@@ -12,8 +12,14 @@ relative patterns trustworthy, absolute mass less so. TabICL weights exact (post
 - Feature selection: n/a (row-attention only in this card).
 - Failure signature: opel/saab same-label mass stuck at 0.48–0.55 vs 0.65–0.68 bus/van at EVERY layer.
 - Readout gap: final probe 0.894 > model 0.871 — decoder is the bottleneck, not representations.
-- One-sentence mechanism: sharp same-class lookup that cannot resolve confusable classes,
-  with additional loss in the readout head.
+- CAUSAL (12x8 head-ablation sweep, no-op control at base exactly): the opel/saab verdict
+  localizes to final-block heads — (L11,H1) ablation: acc 0.741, opel 0.333, bus/van untouched;
+  (L11,H4): saab 0.409; (L11,H5/H3/H7): 0.788-0.800. All other blocks/heads ~= base.
+  Early layers are causally redundant for the output.
+- RETRACTION: a first sweep implicated head 1 in blocks 0-5 (hook-staleness artifact);
+  the controlled re-sweep refutes it. Rule adopted: every ablation claim needs a no-op control.
+- One-sentence mechanism: sharp same-class lookup whose confusable-class verdict is rendered
+  almost entirely by final-block heads 1/4/5, with additional loss in the readout head.
 
 ## Card: TabPFN-3.5 on vehicle (acc 0.918)
 
@@ -31,5 +37,6 @@ relative patterns trustworthy, absolute mass less so. TabICL weights exact (post
 "Sharper attention = better model" is REJECTED on this pair: the winner attends more diffusely
 and more uniformly. The two models place the classification work in opposite stages
 (TabICL: representation-rich/decoder-poor; TabPFN: representation-diffuse/decoder-strong).
-Next: activation patching on opel/saab rows for causal confirmation (plan §7 order: patching
+Next: cross-row activation patching at TabICL L11 (bus activations into opel rows) and the
+TabPFN-side causal test, then the intervention loop (plan §7 order: patching
 before any SAE/circuit claim).
