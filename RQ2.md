@@ -1,4 +1,4 @@
-# RQ2 interim — what predicts the FM advantage (25 datasets: 21 cls + 4 reg)
+# RQ2 interim — what predicts the FM advantage (24 datasets: 21 cls + 3 reg)
 
 ## Headline gaps (TabPFN minus baseline, mean over 3 seeds)
 
@@ -23,6 +23,14 @@ tree-minus-linear gap ≈ 0 (ρ≈+0.12, n.s.) — it is non-LOCALITY, not nonli
 the advantage. Consistent with the vehicle card (diffuse-global TabPFN beats sharp-lookup TabICL
 on confusable classes). Caveat: n=20, 18 comparisons; does not survive strict Bonferroni —
 treat as the prior for the 50-set confirmation, correspondent to plan §6 Step 2.
+
+## TabDPT third-prior column (24 sets, MOLAB `/marimo/roster_TABDPt.csv`)
+
+TabDPT ≈ TabICL tier almost everywhere (vehicle 0.888, balance 0.984, tic-tac-toe 0.984);
+unique value: letter 0.942 where TabPFN/TabICL cannot run (26 classes), mushroom 0.999.
+No dataset where real-data prior beats both synthetic priors — the "messy real data" hypothesis
+for TabDPT remains unconfirmed on this suite. Regression: boston 2.873 / cpu_act 2.196 /
+puma8NH 2.576 (all trail TabPFN).
 
 ## Artifacts (MOLAB /marimo, to be pulled to repo)
 
