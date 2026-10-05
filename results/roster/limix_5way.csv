@@ -1,0 +1,16 @@
+dataset,model,seed,metric,score,env
+diabetes,limix,0,acc,0.8181818181818182,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+diabetes,limix,1,acc,0.7272727272727273,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+diabetes,limix,2,acc,0.7467532467532467,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+credit-g,limix,0,acc,0.785,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+credit-g,limix,1,acc,0.78,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+credit-g,limix,2,acc,0.73,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+vehicle,limix,0,acc,0.8294117647058824,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+vehicle,limix,1,acc,0.8,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+vehicle,limix,2,acc,0.8117647058823529,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+breast-w,limix,0,acc,0.9642857142857143,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+breast-w,limix,1,acc,0.9357142857142857,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+breast-w,limix,2,acc,0.9785714285714285,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+segment,limix,0,acc,0.9891774891774892,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+segment,limix,1,acc,0.9848484848484849,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101
+segment,limix,2,acc,0.9913419913419913,torch=2.11.0+cu130 pandas=3.0.3 sklearn=1.9.0 limix=patched-v101

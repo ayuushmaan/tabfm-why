@@ -1,0 +1,16 @@
+dataset,model,seed,metric,score,env
+diabetes,mitra,0,acc,0.7857142857142857,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+diabetes,mitra,1,acc,0.7402597402597403,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+diabetes,mitra,2,acc,0.7272727272727273,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+credit-g,mitra,0,acc,0.78,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+credit-g,mitra,1,acc,0.79,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+credit-g,mitra,2,acc,0.74,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+vehicle,mitra,0,acc,0.8647058823529412,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+vehicle,mitra,1,acc,0.8411764705882353,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+vehicle,mitra,2,acc,0.8705882352941177,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+breast-w,mitra,0,acc,0.9785714285714285,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+breast-w,mitra,1,acc,0.9285714285714286,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+breast-w,mitra,2,acc,0.9785714285714285,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+segment,mitra,0,acc,0.9935064935064936,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+segment,mitra,1,acc,0.9783549783549783,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
+segment,mitra,2,acc,0.9891774891774892,torch=2.11.0+cu130 sklearn=1.9.0 pandas=2.3.3
