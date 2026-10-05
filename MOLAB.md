@@ -59,15 +59,14 @@ inside `sklearn_interface._train_ensemble`, pandas-3/AutoGluon friction). Reliab
 early stopping, ~1–2 min/fit on GPU), not zero-shot ICL — budget accordingly.
 Mitra diabetes acc: 0.766–0.775 (same tie band).
 
-## Cross-box reproducibility alert (UNCONFIRMED, under investigation)
+## Cross-box reproducibility incident — RESOLVED (env corruption, not torch sensitivity)
 
-Same TabICL 2.2.0 + same ckpt (`tabicl-classifier-v2-20260212.ckpt`, repo untouched since Feb 2026)
-+ same vehicle split/seed scores **0.871 on box 1 but 0.647 on box 2**.
-TabPFN barely moved (0.92→0.89). Suspect: torch 2.13/2.14 (box 1) vs 2.11 (box 2) numerics in
-ssmax/RoPE paths flipping knife-edge opel/saab calls — consistent with TabICL's sharp-attention
-fragility vs TabPFN's diffuse robustness. Ruled out: SDPA kernel choice (flash/math/mem-eff all
-0.647), data (identical), checkpoint drift, fit nondeterminism (deterministic within box).
-Next: clean-env torch==2.13 retest. If confirmed, this is a standalone robustness finding:
-headline accuracy swinging 22pp on a minor torch upgrade. Caution: box-2 kernel env got
-half-broken by a partial torch upgrade (huggingface_hub import fails) — restart kernel before
-further box-2 runs.
+Same TabICL 2.2.0 + same ckpt + same vehicle split/seed scored 0.871 (box 1), 0.647 (box 2),
+then 0.871 again (box 3, clean). Root cause: box 2 ran a half-applied torch upgrade
+(uv reported torch==2.13.0 installed while the kernel still imported 2.11.0 binaries —
+franken-env with mismatched binaries/metadata), which silently corrupted numerics.
+NOT a torch-version effect: box 3 (torch 2.11.0, numpy 2.4.6, pandas 3.0.3, sklearn 1.9.0,
+scipy 1.18.0) reproduces 0.8706 × 3 fits deterministically. The "22pp torch swing" hypothesis
+is RETRACTED. Lab rules adopted: (1) pin full env versions at session start and log with every
+result; (2) never swap torch mid-session — restart kernel instead; (3) any cross-session
+discrepancy triggers an env-diff before any scientific interpretation.
