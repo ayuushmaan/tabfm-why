@@ -47,6 +47,15 @@ relational computation at L11); restriction removes the comparisons the final bl
 This is consistent with, and predicted by, the relational-signal card. Next lever: context
 TRANSPLANT (which rows), not restriction (how many).
 
+## Interventions v5 (L3 activation steering) — INERT
+
+Contrastive mean vectors (correct-minus-wrong rows) injected into L11H1 (opel) and L11H4
+(saab) across α ∈ {0.1–5.0}: head-1 moves exactly 1 saab row at α=2.0 (0.871→0.882);
+head-4 moves NOTHING at any α. Verdict: final-block head outputs are not linearly steerable
+with mean-contrast vectors (5-row minority statistics + relational, not additive, computation).
+Steering abandoned; the card's causal claims rest on ablation + transplant, which is sufficient.
+(Note: an early mismatched-head run is superseded by these clean head-consistent runs.)
+
 ## Interventions v4 (context-ensembling across compositions) — FAILED held-out validation
 
 Seed 0: ens[opel-heavy, saab-heavy, balanced] = 0.894 vs full 0.871 (gap-closed 49%, no
