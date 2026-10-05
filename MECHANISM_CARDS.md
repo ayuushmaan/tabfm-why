@@ -47,6 +47,16 @@ relational computation at L11); restriction removes the comparisons the final bl
 This is consistent with, and predicted by, the relational-signal card. Next lever: context
 TRANSPLANT (which rows), not restriction (how many).
 
+## Interventions v3 (joint opel+saab enrichment) — no free lunch, operating-point frontier
+
+both-heavy (35/35/15/15): 0.824, opel 0.667 (DOWN vs random 0.714); confusable-only: 0.435
+(bus/van → 0, opel 0.762/saab 0.955); saab-heavy: 0.788 (saab 0.909, opel 0.429).
+Nothing beats full natural context overall (0.871). Reframe: support composition is a TUNABLE
+OPERATING POINT along a confusable-recall frontier (opel 0.00–0.95 trade vs saab), not an
+accuracy maximizer. Deployment-relevant where one class is critical (e.g. fault detection):
+opel-heavy buys opel 0.952 at overall 0.788. Next: context-ensembling (average across
+compositions) as the only remaining free-lunch candidate.
+
 ## Interventions v2 (context TRANSPLANT, fixed n=200) — CAUSAL CONFIRMATION
 
 Varying support composition at fixed size: random (opel 0.714), balanced (0.810),
