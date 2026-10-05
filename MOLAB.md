@@ -58,3 +58,16 @@ inside `sklearn_interface._train_ensemble`, pandas-3/AutoGluon friction). Reliab
 **int-encoded labels** (`np.bincount` requires ints). Note this is fine-tuning (~50 epochs,
 early stopping, ~1–2 min/fit on GPU), not zero-shot ICL — budget accordingly.
 Mitra diabetes acc: 0.766–0.775 (same tie band).
+
+## Cross-box reproducibility alert (UNCONFIRMED, under investigation)
+
+Same TabICL 2.2.0 + same ckpt (`tabicl-classifier-v2-20260212.ckpt`, repo untouched since Feb 2026)
++ same vehicle split/seed scores **0.871 on box 1 but 0.647 on box 2**.
+TabPFN barely moved (0.92→0.89). Suspect: torch 2.13/2.14 (box 1) vs 2.11 (box 2) numerics in
+ssmax/RoPE paths flipping knife-edge opel/saab calls — consistent with TabICL's sharp-attention
+fragility vs TabPFN's diffuse robustness. Ruled out: SDPA kernel choice (flash/math/mem-eff all
+0.647), data (identical), checkpoint drift, fit nondeterminism (deterministic within box).
+Next: clean-env torch==2.13 retest. If confirmed, this is a standalone robustness finding:
+headline accuracy swinging 22pp on a minor torch upgrade. Caution: box-2 kernel env got
+half-broken by a partial torch upgrade (huggingface_hub import fails) — restart kernel before
+further box-2 runs.
