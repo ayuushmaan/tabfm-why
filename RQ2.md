@@ -1,4 +1,18 @@
-# RQ2 interim — what predicts the FM advantage (24 datasets: 21 cls + 3 reg)
+# RQ2 — what predicts the FM advantage (50 datasets: 45 cls + 5 reg)
+
+## 50-set confirmation: NON-LOCALITY CONFIRMED (n=41, Bonferroni-surviving)
+
+TabPFN-minus-RF gap (wins 33/41): vs lm_1nn ρ=−0.41 (p=0.008), vs tree3 ρ=−0.53 (p=0.0004),
+vs logreg ρ=−0.51 (p=0.0006), vs smoothness ρ=−0.37 (p=0.017); tree-minus-linear ρ≈0 (n.s.).
+TabPFN-minus-LightGBM (wins 39/41): vs 1NN ρ=−0.62 (p<0.0001), vs smoothness ρ=−0.57
+(p=0.0001), vs tree3 ρ=−0.54 (p=0.0003). Strongest p-values survive Bonferroni over 12
+comparisons. Claim upgraded: datasets where LOCAL neighborhood structure is weak
+(low 1NN/smoothness) show the largest FM advantage — and it is NOT nonlinearity
+(tree-minus-linear ≈ 0 twice). FMs combined win 37/43 sets (TabPFN 23, TabICL 14).
+Linear LODO-R² still ≤0 (rank signal strong, linear generalization pending — needs
+nonlinear meta-model or the custom interaction/axis probes).
+
+## Earlier interim (25 sets, superseded but consistent)
 
 ## Headline gaps (TabPFN minus baseline, mean over 3 seeds)
 
