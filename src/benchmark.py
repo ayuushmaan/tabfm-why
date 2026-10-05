@@ -20,7 +20,9 @@ from sklearn.linear_model import LogisticRegression, Ridge
 from sklearn.neural_network import MLPClassifier, MLPRegressor
 import lightgbm as lgb
 
-PY = r"C:\Users\ayush\OneDrive\Desktop\Theatre\Guido\Projects\TFM4.0"
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+RESULTS = ROOT / "results"
 SEEDS = [0, 1, 2]
 MAX_TRAIN = 2000
 MAX_TEST = 1000
@@ -147,7 +149,6 @@ def get_models(task, n_classes=2):
     return models
 
 def run():
-    import os
     ds = load_datasets()
     rows = []
     for dname, (Xraw, yraw, kind) in ds.items():
@@ -231,7 +232,8 @@ def run():
                     traceback.print_exc()
                     rows.append({"dataset":dname,"task":task,"seed":seed,"model":mname,"error":str(e)[:200]})
     out = pd.DataFrame(rows)
-    out.to_csv(os.path.join(PY,"results_main.csv"), index=False)
+    RESULTS.mkdir(exist_ok=True)
+    out.to_csv(RESULTS / "results_main.csv", index=False)
     print("\nSaved results_main.csv with", len(out), "rows")
     print(out.groupby(["model"]).mean(numeric_only=True).round(4))
 

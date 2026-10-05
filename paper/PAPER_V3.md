@@ -1,6 +1,6 @@
 # Sharp Lookup vs Diffuse Decoding: A Mechanistic Comparison of Five Tabular Foundation Models
 
-**Authors:** [Your Name] · [Affiliation] · [Contact]
+**Authors:** Ayushman Garg · [Affiliation] · [Contact]
 **Code:** https://github.com/ayuushmaan/tabfm-why · **Status:** draft v3.0 (October 2026)
 
 ---
@@ -97,7 +97,7 @@ the dataset mirror of the vehicle card. Correlational (18 comparisons), pending 
 
 Single-seed internals; approximate TabPFN weights; Mitra is fine-tuning; 7→25 sets but no
 official folds/contamination matrix yet; no SAE/circuits. Env-corruption incident documented
-with adopted pinning rules. Artifacts: harness/, REPORT.md, MOLAB.md, MECHANISM_CARDS.md,
+with adopted pinning rules. Artifacts: harness (`src/harness/`), docs/REPORT.md, MOLAB.md, MECHANISM_CARDS.md,
 RQ2.md, CSVs, plots, PAPER_V2.md (this file: PAPER_V3.md). Refs: Hollmann 2023/2025; Qu 2025;
 TabDPT 2410.18164; TabArena 2506.16791; LimiX 2509.03505/2606.04485; Mitra-v2 TR 2609.04540;
 Niculescu-Mizil & Caruana 2005; Geirhos 2020.

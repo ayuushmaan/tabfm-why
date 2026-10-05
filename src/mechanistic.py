@@ -17,7 +17,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neural_network import MLPClassifier
 import lightgbm as lgb
 
-PY = r"C:\Users\ayush\OneDrive\Desktop\Theatre\Guido\Projects\TFM4.0"
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+RESULTS = ROOT / "results"
 
 def get_clf(name):
     if name=="LightGBM": return lgb.LGBMClassifier(verbosity=-1, n_estimators=200, learning_rate=0.05, random_state=0)
@@ -243,7 +245,7 @@ if __name__=="__main__":
     which = sys.argv[1] if len(sys.argv)>1 else "all"
     allp=[]
     def save(tag, df):
-        fp=os.path.join(PY,f"results_mech_{tag}.csv")
+        fp=os.path.join(RESULTS,f"results_mech_{tag}.csv")
         df.to_csv(fp,index=False); print(f"Saved {fp}", df.shape)
     if which in ("all","part1"):
         print("probe: interaction",flush=True); d=probe_interaction(); print(d); allp.append(d); save("interaction",d)
@@ -254,12 +256,12 @@ if __name__=="__main__":
         print("probe: attribution",flush=True)
         try:
             agree,impd=probe_attribution(); print(agree); print(impd.head(20)); allp.append(agree)
-            save("attrib_agree",agree); impd.to_csv(os.path.join(PY,"results_attrib_importance.csv"),index=False)
+            save("attrib_agree",agree); impd.to_csv(os.path.join(RESULTS,"results_attrib_importance.csv"),index=False)
         except Exception as e: print("attrib failed",e); traceback.print_exc()
     if which in ("all","part2","part3"):
         print("probe: shortcut",flush=True); d=probe_shortcut(); print(d); allp.append(d); save("shortcut",d)
         print("probe: subgroup",flush=True); d=probe_subgroup(); print(d); allp.append(d); save("subgroup",d)
     if allp:
         out=pd.concat(allp,ignore_index=True)
-        out.to_csv(os.path.join(PY,f"results_mechanistic_{which}.csv"),index=False)
+        out.to_csv(os.path.join(RESULTS,f"results_mechanistic_{which}.csv"),index=False)
         print(f"Saved results_mechanistic_{which}.csv", out.shape)

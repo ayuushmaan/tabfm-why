@@ -1,0 +1,13 @@
+# CPU pilot (Windows, Python 3.11)
+tabpfn==9.1.0
+tabicl
+lightgbm==4.6.0
+scikit-learn==1.8.0
+pandas>=2.2
+numpy>=2.1
+scipy
+matplotlib
+pyarrow
+# GPU track (MOLAB, Python 3.13, CUDA 13) additionally:
+# torch (CUDA build matching your driver), pymfe, omegaconf, faiss-cpu
+# TabDPT/LimiX/Mitra: cloned from source, see docs/MOLAB.md (no PyPI package)

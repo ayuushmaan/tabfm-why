@@ -1,8 +1,8 @@
 # Tabular Foundation Models: Comparative Study with Mechanistic Analysis
 
 **Environment:** Windows 11, Python 3.11, CPU-only (Intel i5-13450HX, 16 GB RAM), torch 2.6 CPU, scikit-learn 1.8, LightGBM 4.6, `tabpfn` 9.1.0, `tabicl` (latest).
-**Protocol (TabArena-inspired):** 6 classification + 1 regression dataset (all TabArena members), 80/20 stratified split, 3 seeds (0,1,2), train capped at 2000 rows / test at 1000, mean±std reported. All scripts, CSVs and plots in this folder (`benchmark.py`, `benchmark_tabpfn_only.py`, `mechanistic.py`, `plots.py`, `results_full.csv`, `results_mech_*.csv`, `plot_*.png`).
-**Reproduce:** `python benchmark.py` (produces `results_main.csv`; TabPFN needs `TABPFN_TOKEN`), then `python benchmark_tabpfn_only.py <dataset>`, then `python mechanistic.py part1|part2|part3`, then `python plots.py`.
+**Protocol (TabArena-inspired):** 6 classification + 1 regression dataset (all TabArena members), 80/20 stratified split, 3 seeds (0,1,2), train capped at 2000 rows / test at 1000, mean±std reported. Scripts live in `src/`, result CSVs in `results/`, plots in `figures/` (paths updated in the repo reorganization).
+**Reproduce:** from repo root: `python src/benchmark.py`, then `python src/benchmark_tabpfn_only.py <dataset>`, then `python src/mechanistic.py part1|part2|part3`, then `python src/plots.py`. Scripts live in `src/`, outputs in `results/` and `figures/`.
 
 ## 0. Model availability in this environment (finding #0)
 
@@ -37,7 +37,7 @@
 | 5 | MLP | 0.628 | 0.439 | 0.724 |
 | 6 | Linear (Ridge) | 0.734 | 0.538 | 0.626 |
 
-![rank](plot_rank_accuracy.png) ![heatmap](plot_dataset_heatmap.png) ![regression](plot_regression.png)
+![rank](../figures/plot_rank_accuracy.png) ![heatmap](../figures/plot_dataset_heatmap.png) ![regression](../figures/plot_regression.png)
 
 **Caveat:** gaps between TabPFN and TabICL (~0.004 acc) are well within seed noise (per-model std ≈ 0.09–0.11 across datasets); the FM-vs-baseline gap (~0.03) is consistent in sign across 5/6 datasets (see §2).
 
@@ -58,14 +58,14 @@
 ## 3. Mechanistic analysis
 
 ### 3.1 Feature interactions (XOR vs linear synthetic, 1200×6)
-![interaction](plot_interaction.png)
+![interaction](../figures/plot_interaction.png)
 Linear-synthetic: all models ≥0.96. XOR-synthetic: Linear 0.51 (chance, as theory predicts), MLP 0.92, TabICL 0.97, RF 0.99, TabPFN 0.99, LightGBM 1.00. **Inference:** both FMs implement genuine 2-way interaction detectors (else XOR would be at chance like Linear); tree ensembles remain the interaction ceiling, FMs match them. This is *evidence*, not correlation: the Linear control fails exactly as predicted.
 
 ### 3.2 Categorical vs numerical sensitivity (credit-g ablation)
 Full → num-only → cat-only accuracy deltas: every model drops when either type is removed (both types carry signal), but the FM drops are asymmetric: TabPFN −0.076 (num-only) vs −0.032 (cat-only); TabICL −0.052 vs −0.012. I.e. **FMs extract more from the categorical block** than GBDT/RF do (RF: −0.032/−0.044 symmetric). Supported by attribution agreement (§3.5): FMs rank `checking_status`/`duration` top, like trees, but weight them more effectively — consistent with pretraining on mixed-type synthetic tables with explicit categorical handling, vs ordinal-encoded trees.
 
 ### 3.3 Missing-value robustness (diabetes, MCAR 0→30%)
-![missing](plot_missing.png)
+![missing](../figures/plot_missing.png)
 TabPFN 0.775→0.771 (−0.004), TabICL 0.775→0.766 (−0.009), RF −0.009, Linear −0.013, MLP −0.018, LightGBM −0.043. **FMs are the flattest.** Mechanism: in-context models treat missingness as another context pattern seen during synthetic pretraining (which includes missingness), while LightGBM's default split-direction heuristic degrades fastest here. (Naive median-impute was applied before all models, so the gap reflects model behavior, not preprocessing.)
 
 ### 3.4 Calibration (diabetes: ECE / log-loss at matched accuracy ~0.78)

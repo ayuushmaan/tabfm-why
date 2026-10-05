@@ -1,6 +1,6 @@
 # Sharp Lookup vs Diffuse Decoding: A Mechanistic Comparison of Five Tabular Foundation Models
 
-**Authors:** [Your Name] · [Affiliation] · [Contact]
+**Authors:** Ayushman · [Affiliation] · [Contact]
 **Code:** https://github.com/ayuushmaan/tabfm-why · **Status:** draft v2.0 (October 2026)
 
 ---
@@ -49,7 +49,7 @@ Single-seed internals (n=85 test rows); TabPFN weights reconstructed approximate
 
 ## 8. Reproducibility
 
-`https://github.com/ayuushmaan/tabfm-why`: harness (`harness/`), MOLAB recipes (`MOLAB.md`), mechanism cards (`MECHANISM_CARDS.md`), raw CSVs, plots, REPORT.md. LimiX bridge, TabDPT dynamo workaround and Mitra int-label requirement documented. Tokens never committed.
+`https://github.com/ayuushmaan/tabfm-why`: harness (`src/harness/`), MOLAB recipes (`MOLAB.md`), mechanism cards (`MECHANISM_CARDS.md`), raw CSVs, plots, REPORT.md. LimiX bridge, TabDPT dynamo workaround and Mitra int-label requirement documented. Tokens never committed.
 
 ## References
 

@@ -25,8 +25,8 @@ intervention success criterion: ≥50% of losing pairs half-closed, validated on
   service account. TabuLa/EXAONE entries stay excluded until checkpoint+license verified.
 - Refactor harness into adapters: `adapters/{tabpfn,tabicl,tabdpt,mitra,limix,gbdt,mlp}.py` exposing
   `fit/predict/predict_proba/get_activations`; run configs hashed into `run_id`.
-  **Status: local core done** — `harness/core.py` (manifest + Parquet store + resume),
-  `harness/adapters.py` (registry incl. XGBoost/CatBoost/TabDPT stubs), `harness/run_suite.py`
+  **Status: local core done** — `src/harness/core.py` (manifest + Parquet store + resume),
+  `src/harness/adapters.py` (registry incl. XGBoost/CatBoost/TabDPT stubs), `src/harness/run_suite.py`
   (sharded CLI, per-sample predictions); validated on CPU (heart-statlog × Linear/RF + resume).
 - Storage: per-sample predictions + metrics in Parquet keyed by `run_id`
   (`runs/predictions/metrics_fold/efficiency/robustness/explanations/datasets/contamination`);

@@ -13,7 +13,7 @@ TabPFN ≈ TabICL > baselines — but the gap lives in confusable classes and we
 ## Install
 
 ```bash
-pip install tabpfn tabicl lightgbm scikit-learn pandas matplotlib scipy
+pip install -r requirements.txt   # TabPFN needs TABPFN_TOKEN, see below
 ```
 
 TabPFN v2.5+ needs a free Prior Labs key (otherwise every `.fit()` opens a browser login tab):
@@ -26,12 +26,12 @@ export TABPFN_TOKEN="<your-key>"   # Windows: $env:TABPFN_TOKEN="<your-key>"
 ## Reproduce
 
 ```bash
-python benchmark.py                        # main benchmark -> results_main.csv
-python benchmark_tabpfn_only.py <dataset>  # per-dataset TabPFN rerun (repeat per dataset)
-python mechanistic.py part1                # interaction, cat/num, missingness, calibration
-python mechanistic.py part3                # shortcut, subgroup (part2 = attribution)
-python plots.py                            # 11 plots -> plot_*.png
-python sigtest.py                          # paired tests -> results_significance.csv
+python src/benchmark.py                        # main benchmark -> results/results_main.csv
+python src/benchmark_tabpfn_only.py <dataset>  # per-dataset TabPFN rerun (repeat per dataset)
+python src/mechanistic.py part1                # interaction, cat/num, missingness, calibration
+python src/mechanistic.py part3                # shortcut, subgroup (part2 = attribution)
+python src/plots.py                            # 11 plots -> figures/
+python src/sigtest.py                          # paired tests -> results/results_significance.csv
 ```
 
 CPU-only pilot, ~30–60 min total. Protocol: 7 TabArena datasets, 80/20 stratified splits, seeds {0,1,2}, train ≤2000 rows. GPU track (50 sets, 5 TFMs) runs on MOLAB — see [`MOLAB.md`](MOLAB.md) and [`PLAN.md`](PLAN.md).
@@ -40,14 +40,15 @@ CPU-only pilot, ~30–60 min total. Protocol: 7 TabArena datasets, 80/20 stratif
 
 | File | What |
 |---|---|
-| `benchmark.py` / `benchmark_tabpfn_only.py` | CPU pilot harness + TabPFN rerun |
-| `mechanistic.py` | 8 mechanistic probes (P1–P8, see REPORT.md §3) |
-| `plots.py` / `sigtest.py` | Figures / paired significance tests |
-| `harness/` | Resume-aware Parquet suite runner (Phase 0) |
-| `results_full.csv`, `results_mech_*.csv`, `results_significance.csv` | Pilot raw results |
-| `plot_*.png` | Pilot figures |
-| `REPORT.md` / `PAPER.md`–`PAPER_V3.md` | Pilot report / paper drafts (V3 current) |
-| `MOLAB.md` / `PLAN.md` / `RQ2.md` / `MECHANISM_CARDS.md` | GPU track: recipes, plan, RQ2, mechanism cards |
+| `src/benchmark.py` / `src/benchmark_tabpfn_only.py` | CPU pilot harness + TabPFN rerun |
+| `src/mechanistic.py` | 8 mechanistic probes (P1–P8, see docs/REPORT.md §3) |
+| `src/plots.py` / `src/sigtest.py` | Figures / paired significance tests |
+| `src/harness/` | Resume-aware Parquet suite runner (Phase 0) |
+| `results/` | Pilot raw result CSVs |
+| `figures/` | Pilot plots |
+| `docs/` | Pilot report, plan, GPU notes, RQ2, mechanism cards |
+| `paper/` | Paper drafts (`PAPER_V3.md` current) |
+| `unslop-audit/` | Writing-audit scanner reports |
 
 ## Citation
 

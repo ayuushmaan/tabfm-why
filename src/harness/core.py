@@ -2,7 +2,8 @@
 import json, os, time, hashlib
 import pandas as pd
 
-STORE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "store")
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+STORE = os.path.join(REPO_ROOT, "store")
 
 def paths(store=STORE):
     return {

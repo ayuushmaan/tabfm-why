@@ -1,6 +1,6 @@
 # Beyond Leaderboards: A Mechanistic Comparison of Tabular Foundation Models
 
-**Authors:** [Your Name] · [Affiliation] · [Contact]
+**Authors:** Ayushman Garg · [Affiliation] · [Contact]
 **Code & data:** https://github.com/ayuushmaan/tabfm-why · **Status:** draft v1.0 (October 2026)
 
 ---
@@ -64,7 +64,7 @@ Three seeds (CIs honest but wide); CPU-capped sizes favor small-data methods; pr
 
 ## 9. Reproducibility
 
-`benchmark.py` + `benchmark_tabpfn_only.py` + `mechanistic.py` + `plots.py` + `sigtest.py`; raw CSVs (`results_full.csv`, `results_mech_*.csv`, `results_significance.csv`); 11 plots. Environment pinned in REPORT.md §0.
+`src/` scripts (`benchmark.py`, `benchmark_tabpfn_only.py`, `mechanistic.py`, `plots.py`, `sigtest.py`); raw CSVs (`results_full.csv`, `results_mech_*.csv`, `results_significance.csv`); 11 plots. Environment pinned in REPORT.md §0.
 
 ## References
 
