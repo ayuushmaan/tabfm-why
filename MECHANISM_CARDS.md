@@ -47,6 +47,25 @@ relational computation at L11); restriction removes the comparisons the final bl
 This is consistent with, and predicted by, the relational-signal card. Next lever: context
 TRANSPLANT (which rows), not restriction (how many).
 
+## Interventions v2 (context TRANSPLANT, fixed n=200) — CAUSAL CONFIRMATION
+
+Varying support composition at fixed size: random (opel 0.714), balanced (0.810),
+opel-heavy/50% (0.952), opel-free (0.000). Opel recall tracks opel support share almost
+deterministically — the verdict IS the context composition. Seesaw with saab
+(1.000 → 0.273): zero-sum between confusables at fixed budget, overall acc 0.847 → 0.788.
+Gap-closed on opel vs TabPFN (0.875): 168% (overshoot) but fails the no-degradation rule.
+Verdict: steering wheel found; free lunch not found. Next: opel+saab joint enrichment
+(preserve both confusables, cut bus/van).
+
+Pre-registered prediction: kNN-local support (k=50/100/200) sharpens same-class neighborhoods,
+opel/saab recall rises toward TabPFN, bus/van unaffected. Result (clean env, per-row fits):
+k=50: 0.847 (opel 0.667), k=100: 0.847 (opel 0.714), k=200: 0.871, full: 0.871 (opel 0.762).
+Gap-closed: NEGATIVE — local context hurts opel, helps bus only marginally (1.000 vs 0.955).
+Interpretation: TabICL's opel verdict needs GLOBAL context (class balance/prototypes for the
+relational computation at L11); restriction removes the comparisons the final block needs.
+This is consistent with, and predicted by, the relational-signal card. Next lever: context
+TRANSPLANT (which rows), not restriction (how many).
+
 ## Contrast (the publishable claim)
 
 "Sharper attention = better model" is REJECTED on this pair: the winner attends more diffusely
