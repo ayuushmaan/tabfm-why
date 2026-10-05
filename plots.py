@@ -16,7 +16,7 @@ plt.figure(figsize=(7,3.5)); plt.bar(m.index, m.values)
 plt.ylabel("mean accuracy (6 cls datasets x 3 seeds)"); plt.title("Ranked comparison: classification accuracy")
 plt.xticks(rotation=15); plt.tight_layout(); plt.savefig(os.path.join(PY,"plot_rank_accuracy.png")); plt.close()
 
-# 2. dataset-wise heatmap (accuracy + california rmse panel as second plot)
+# 2. dataset-wise heatmap
 piv = cl.groupby(["dataset","model"])["accuracy"].mean().unstack().reindex(columns=ORDER)
 fig, ax = plt.subplots(figsize=(8,3.5))
 im = ax.imshow(piv.values, vmin=0.6, vmax=1.0)

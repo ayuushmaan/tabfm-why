@@ -44,7 +44,6 @@ def load_dataset(name):
     return b.data, pd.Series(b.target).astype(str).reset_index(drop=True), "class"
 
 def run_one(manifest, model_name, dataset, seed, max_train=2000, max_test=1000):
-    from sklearn.datasets import fetch_openml  # noqa (kept local for worker pickling)
     config = {"max_train": max_train, "max_test": max_test}
     rid = make_run_id(model_name, dataset, seed, config)
     if manifest.status(rid) == "done":
@@ -100,11 +99,10 @@ def run_one(manifest, model_name, dataset, seed, max_train=2000, max_test=1000):
                 pred = np.asarray(raw).astype(str)
                 pred_e = le.transform(pd.Series(pred).astype(str))
             proba = pipe.predict_proba(Xte); pred_s = time.time() - t1
-        import json as _json
         pred_df = pd.DataFrame({
             "row_id": row_ids,
             "y_true": np.asarray(yte), "y_pred": np.asarray(pred).astype(str),
-            "y_proba": [_json.dumps([round(float(v), 6) for v in row]) for row in proba],
+            "y_proba": [json.dumps([round(float(v), 6) for v in row]) for row in proba],
         })
         metrics = {"accuracy": float(accuracy_score(yte_e, pred_e)),
                    "logloss": float(log_loss(yte_e, proba, labels=list(range(len(le.classes_))))),

@@ -17,7 +17,8 @@ intervention success criterion: ≥50% of losing pairs half-closed, validated on
 
 ## Phase 0 — MOLAB setup + infra hardening (week 1)
 
-- [CONFIRM] GPU model, memory, quota/hours, max job length, shared filesystem paths, container policy.
+- [DONE] GPU confirmed (RTX PRO 6000 Blackwell, 96 GB, 6 h cap). Still open: shared filesystem
+  paths; container policy (marimo notebooks used instead of batch jobs so far).
 - Stand up: Python 3.11 env mirror, PyTorch CUDA, `tabicl`, `tabpfn`, `tabdpt` (Layer6 HF), Mitra
   (autogluon HF), LimiX (stableai-org HF), PyMFE, MLflow (or W&B) on shared storage.
 - HF auth: `TABPFN_TOKEN` as secret (never in repo); accept Prior Labs + gated-repo licenses once per

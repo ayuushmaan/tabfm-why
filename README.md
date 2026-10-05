@@ -1,13 +1,14 @@
 # tabfm-why — Beyond Leaderboards: A Mechanistic Comparison of Tabular Foundation Models
 
-TabPFN ≈ TabICL > baselines — but the gap is concentrated in confusable classes, robustness, and calibration, not everywhere. This repo contains the full study: benchmark harness, 8 mechanistic probes, significance tests, plots, paper draft, and raw results.
+TabPFN ≈ TabICL > baselines — but the gap lives in confusable classes and weak-locality datasets, not everywhere. Five TFMs (TabPFN-3.5, TabICLv2, TabDPT, Mitra-v2, LimiX-2M) vs baselines on 50 datasets, with attention tracing, probe lens, causal ablations, and scored interventions — all with pre-registered held-out validation.
 
 ## Key findings
 
-- **Ranked:** TabPFN (0.872 acc) ≈ TabICL (0.868) > RF (0.841) > Linear/Linear > LightGBM > MLP; regression RMSE TabPFN 0.396 > TabICL 0.422 > LightGBM 0.496.
-- **Honest stats:** TabPFN≈TabICL (p=0.23); FM-vs-RF not significant (p≈0.07) — the gap lives in one dataset (vehicle opel/saab: +27–37 pp recall).
-- **Mechanisms:** genuine interaction modeling (XOR ≈0.99 vs 0.51 linear), best categorical exploitation, flattest missingness curves, best calibration (ECE ≈0.035 vs 0.13 LightGBM), minimal shortcut reliance, noise immunity.
-- Full analysis: [`REPORT.md`](REPORT.md) · Paper draft: [`PAPER.md`](PAPER.md)
+- **Ranked (50 sets):** FMs combined win 37/43; TabPFN never loses to RF (worst −0.002); only loss anywhere is tic-tac-toe to LightGBM (−0.016). TabPFN≈TabICL (p=0.23).
+- **Mechanisms:** TabICL looks up sharply but reads out poorly (probe 0.894 > output 0.871); TabPFN aggregates diffusely with a strong decoder (0.918 > 0.894 probe). Opel/saab verdicts localize causally to final-block heads 1/4/5.
+- **RQ2:** FM advantage tracks WEAK local structure (vs 1NN ρ≈−0.62, Bonferroni-surviving) — non-locality, not nonlinearity.
+- **Interventions:** composition steers verdicts (opel 0.00→0.95) but zero-sum; ensemble +49% on-seed, fails held-out (caught by rule); steering inert. Criterion at 0 with informative failures.
+- Full analysis: [`REPORT.md`](REPORT.md) (CPU pilot) · Paper: [`PAPER_V3.md`](PAPER_V3.md) · Cards: [`MECHANISM_CARDS.md`](MECHANISM_CARDS.md) · RQ2: [`RQ2.md`](RQ2.md) · GPU notes: [`MOLAB.md`](MOLAB.md)
 
 ## Install
 
@@ -33,18 +34,20 @@ python plots.py                            # 11 plots -> plot_*.png
 python sigtest.py                          # paired tests -> results_significance.csv
 ```
 
-CPU-only, ~30–60 min total. Protocol: 7 TabArena datasets, 80/20 stratified splits, seeds {0,1,2}, train ≤2000 rows.
+CPU-only pilot, ~30–60 min total. Protocol: 7 TabArena datasets, 80/20 stratified splits, seeds {0,1,2}, train ≤2000 rows. GPU track (50 sets, 5 TFMs) runs on MOLAB — see [`MOLAB.md`](MOLAB.md) and [`PLAN.md`](PLAN.md).
 
 ## Repo layout
 
 | File | What |
 |---|---|
-| `benchmark.py` / `benchmark_tabpfn_only.py` | Evaluation harness + TabPFN rerun |
+| `benchmark.py` / `benchmark_tabpfn_only.py` | CPU pilot harness + TabPFN rerun |
 | `mechanistic.py` | 8 mechanistic probes (P1–P8, see REPORT.md §3) |
 | `plots.py` / `sigtest.py` | Figures / paired significance tests |
-| `results_full.csv`, `results_mech_*.csv`, `results_significance.csv` | Raw results |
-| `plot_*.png` | Figures |
-| `REPORT.md` / `PAPER.md` | Full report / paper draft |
+| `harness/` | Resume-aware Parquet suite runner (Phase 0) |
+| `results_full.csv`, `results_mech_*.csv`, `results_significance.csv` | Pilot raw results |
+| `plot_*.png` | Pilot figures |
+| `REPORT.md` / `PAPER.md`–`PAPER_V3.md` | Pilot report / paper drafts (V3 current) |
+| `MOLAB.md` / `PLAN.md` / `RQ2.md` / `MECHANISM_CARDS.md` | GPU track: recipes, plan, RQ2, mechanism cards |
 
 ## Citation
 

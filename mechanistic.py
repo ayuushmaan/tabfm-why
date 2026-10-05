@@ -5,7 +5,7 @@ warnings.filterwarnings("ignore")
 import webbrowser as _wb
 _wb.open = lambda *a, **k: (_ for _ in ()).throw(RuntimeError("browser blocked headless"))
 import numpy as np, pandas as pd, os, sys
-from sklearn.datasets import fetch_openml, make_classification
+from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OrdinalEncoder, StandardScaler, LabelEncoder
 from sklearn.compose import ColumnTransformer
@@ -257,12 +257,8 @@ if __name__=="__main__":
             save("attrib_agree",agree); impd.to_csv(os.path.join(PY,"results_attrib_importance.csv"),index=False)
         except Exception as e: print("attrib failed",e); traceback.print_exc()
     if which in ("all","part2","part3"):
-        if which != "part3":
-            print("probe: shortcut",flush=True); d=probe_shortcut(); print(d); allp.append(d); save("shortcut",d)
-            print("probe: subgroup",flush=True); d=probe_subgroup(); print(d); allp.append(d); save("subgroup",d)
-        else:
-            print("probe: shortcut",flush=True); d=probe_shortcut(); print(d); allp.append(d); save("shortcut",d)
-            print("probe: subgroup",flush=True); d=probe_subgroup(); print(d); allp.append(d); save("subgroup",d)
+        print("probe: shortcut",flush=True); d=probe_shortcut(); print(d); allp.append(d); save("shortcut",d)
+        print("probe: subgroup",flush=True); d=probe_subgroup(); print(d); allp.append(d); save("subgroup",d)
     if allp:
         out=pd.concat(allp,ignore_index=True)
         out.to_csv(os.path.join(PY,f"results_mechanistic_{which}.csv"),index=False)

@@ -1,7 +1,7 @@
-"""Reproducible Tabular FM benchmark harness.
+"""Reproducible Tabular FM benchmark harness (CPU pilot).
 Protocol mimics TabArena: stratified holdout, 3 seeds, subsampled to CPU-friendly sizes.
 Models: TabPFN, TabICL, LightGBM, RandomForest, Linear, MLP.
-Datasets: 6 TabArena OpenML members + 2 domain-specific (medical/finance/regression).
+Datasets: 7 TabArena OpenML members + California housing regression.
 """
 import warnings, time, traceback
 warnings.filterwarnings("ignore")
@@ -48,7 +48,8 @@ def load_datasets():
     try:
         print("Fetching California housing...", flush=True)
         h = fetch_california_housing(as_frame=True)
-        X, y = h.data.sample(n=2500, random_state=0), h.target.loc[h.data.sample(n=2500, random_state=0).index]
+        idx = h.data.sample(n=2500, random_state=0).index
+        X, y = h.data.loc[idx], h.target.loc[idx]
         ds["california"] = (X.reset_index(drop=True), y.reset_index(drop=True), "reg")
     except Exception as e:
         print(f"  FAILED california: {e}")
@@ -176,9 +177,6 @@ def run():
             for mname, model in models.items():
                 try:
                     t0 = time.time()
-                    # preprocess: FMs get ordinal+impute (no scale, they are scale-robust); others get full pipe
-                    for_tree = mname in ("LightGBM","RandomForest","TabPFN","TabICL")
-                    # TabPFN/TabICL need pandas with category dtype for cats
                     Xt_tr, Xt_te = Xtr.copy(), Xte.copy()
                     if mname in ("TabPFN","TabICL"):
                         for c in cat_cols:
@@ -202,7 +200,6 @@ def run():
                             pred_e = pipe.predict(Xte)
                             pred = le.inverse_transform(pred_e)
                             proba = pipe.predict_proba(Xte) if hasattr(pipe,"predict_proba") else None
-                            # align proba columns to le
                         else:
                             pred = pipe.predict(Xte); proba=None
                     dt = time.time()-t0

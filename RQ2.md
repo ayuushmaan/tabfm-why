@@ -29,14 +29,10 @@ nonlinear meta-model or the custom interaction/axis probes).
   generalizes. RQ2 needs 50+ sets + custom probes (interaction strength, axis-alignment) —
  PyMFE generics are insufficient. This negative is logged, not hidden.
 
-## Descriptive signal (hypothesis-generating, NOT confirmatory)
+## Descriptive signal (n=20 interim, now CONFIRMED above at n=41 — kept for the record)
 
-FM-minus-baseline gap correlates NEGATIVELY with 1NN landmarker (ρ≈−0.56, p≈0.01) and 5NN
-smoothness (ρ≈−0.55, p≈0.01): FMs win biggest where LOCAL neighborhood structure is weakest.
-tree-minus-linear gap ≈ 0 (ρ≈+0.12, n.s.) — it is non-LOCALITY, not nonlinearity, that predicts
-the advantage. Consistent with the vehicle card (diffuse-global TabPFN beats sharp-lookup TabICL
-on confusable classes). Caveat: n=20, 18 comparisons; does not survive strict Bonferroni —
-treat as the prior for the 50-set confirmation, correspondent to plan §6 Step 2.
+FM-minus-baseline gap correlated negatively with 1NN (ρ≈−0.56, p≈0.01) and smoothness
+(ρ≈−0.55); tree-minus-linear ≈ 0. The 50-set run confirmed both with stronger p-values.
 
 ## TabDPT third-prior column (24 sets, MOLAB `/marimo/roster_TABDPt.csv`)
 
