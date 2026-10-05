@@ -37,7 +37,7 @@
 | 5 | MLP | 0.628 | 0.439 | 0.724 |
 | 6 | Linear (Ridge) | 0.734 | 0.538 | 0.626 |
 
-![rank](../figures/plot_rank_accuracy.png) ![heatmap](../figures/plot_dataset_heatmap.png) ![regression](../figures/plot_regression.png)
+![rank](../figures/pilot/plot_rank_accuracy.png) ![heatmap](../figures/pilot/plot_dataset_heatmap.png) ![regression](../figures/pilot/plot_regression.png)
 
 **Caveat:** gaps between TabPFN and TabICL (~0.004 acc) are well within seed noise (per-model std ≈ 0.09–0.11 across datasets); the FM-vs-baseline gap (~0.03) is consistent in sign across 5/6 datasets (see §2).
 
@@ -58,14 +58,14 @@
 ## 3. Mechanistic analysis
 
 ### 3.1 Feature interactions (XOR vs linear synthetic, 1200×6)
-![interaction](../figures/plot_interaction.png)
+![interaction](../figures/pilot/plot_interaction.png)
 Linear-synthetic: all models ≥0.96. XOR-synthetic: Linear 0.51 (chance, as theory predicts), MLP 0.92, TabICL 0.97, RF 0.99, TabPFN 0.99, LightGBM 1.00. **Inference:** both FMs implement genuine 2-way interaction detectors (else XOR would be at chance like Linear); tree ensembles remain the interaction ceiling, FMs match them. This is *evidence*, not correlation: the Linear control fails exactly as predicted.
 
 ### 3.2 Categorical vs numerical sensitivity (credit-g ablation)
 Full → num-only → cat-only accuracy deltas: every model drops when either type is removed (both types carry signal), but the FM drops are asymmetric: TabPFN −0.076 (num-only) vs −0.032 (cat-only); TabICL −0.052 vs −0.012. I.e. **FMs extract more from the categorical block** than GBDT/RF do (RF: −0.032/−0.044 symmetric). Supported by attribution agreement (§3.5): FMs rank `checking_status`/`duration` top, like trees, but weight them more effectively — consistent with pretraining on mixed-type synthetic tables with explicit categorical handling, vs ordinal-encoded trees.
 
 ### 3.3 Missing-value robustness (diabetes, MCAR 0→30%)
-![missing](../figures/plot_missing.png)
+![missing](../figures/pilot/plot_missing.png)
 TabPFN 0.775→0.771 (−0.004), TabICL 0.775→0.766 (−0.009), RF −0.009, Linear −0.013, MLP −0.018, LightGBM −0.043. **FMs are the flattest.** Mechanism: in-context models treat missingness as another context pattern seen during synthetic pretraining (which includes missingness), while LightGBM's default split-direction heuristic degrades fastest here. (Naive median-impute was applied before all models, so the gap reflects model behavior, not preprocessing.)
 
 ### 3.4 Calibration (diabetes: ECE / log-loss at matched accuracy ~0.78)

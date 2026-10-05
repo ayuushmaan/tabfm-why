@@ -44,8 +44,8 @@ CPU-only pilot, ~30–60 min total. Protocol: 7 TabArena datasets, 80/20 stratif
 | `src/mechanistic.py` | 8 mechanistic probes (P1–P8, see docs/REPORT.md §3) |
 | `src/plots.py` / `src/sigtest.py` | Figures / paired significance tests |
 | `src/harness/` | Resume-aware Parquet suite runner (Phase 0) |
-| `results/` | Pilot raw result CSVs |
-| `figures/` | Pilot plots |
+| `results/pilot/` | Pilot raw result CSVs |
+| `figures/pilot/` | Pilot plots |
 | `docs/` | Pilot report, plan, GPU notes, RQ2, mechanism cards |
 | `paper/` | Paper drafts (`PAPER_V3.md` current) |
 | `unslop-audit/` | Writing-audit scanner reports |

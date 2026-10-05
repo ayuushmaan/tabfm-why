@@ -20,6 +20,7 @@ import lightgbm as lgb
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
+PILOT = RESULTS / "pilot"
 
 def get_clf(name):
     if name=="LightGBM": return lgb.LGBMClassifier(verbosity=-1, n_estimators=200, learning_rate=0.05, random_state=0)

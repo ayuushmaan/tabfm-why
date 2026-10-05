@@ -23,6 +23,7 @@ import lightgbm as lgb
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
+PILOT = RESULTS / "pilot"
 SEEDS = [0, 1, 2]
 MAX_TRAIN = 2000
 MAX_TEST = 1000
@@ -232,8 +233,8 @@ def run():
                     traceback.print_exc()
                     rows.append({"dataset":dname,"task":task,"seed":seed,"model":mname,"error":str(e)[:200]})
     out = pd.DataFrame(rows)
-    RESULTS.mkdir(exist_ok=True)
-    out.to_csv(RESULTS / "results_main.csv", index=False)
+    PILOT.mkdir(parents=True, exist_ok=True)
+    out.to_csv(PILOT / "results_main.csv", index=False)
     print("\nSaved results_main.csv with", len(out), "rows")
     print(out.groupby(["model"]).mean(numeric_only=True).round(4))
 

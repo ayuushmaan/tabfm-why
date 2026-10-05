@@ -13,6 +13,7 @@ from sklearn.metrics import (accuracy_score, balanced_accuracy_score, f1_score,
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
+PILOT = RESULTS / "pilot"
 SEEDS = [0, 1, 2]
 MAX_TRAIN, MAX_TEST = 2000, 1000
 
@@ -99,7 +100,7 @@ def run_dataset(dname):
     cols=["dataset","task","seed","model","time_s","n_train","n_test","n_cat","n_num",
           "accuracy","bal_acc","f1_macro","logloss","auc","ece","rmse","mae","r2","error"]
     out=out.reindex(columns=cols)
-    fp = RESULTS / "results_tabpfn.csv"
+    fp = PILOT / "results_tabpfn.csv"
     if os.path.exists(fp):
         prev=pd.read_csv(fp).reindex(columns=cols)
         prev=prev[~((prev.dataset==dname)&(prev.model=="TabPFN"))]

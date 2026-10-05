@@ -2,8 +2,9 @@ import pandas as pd, numpy as np, math
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
+PILOT = RESULTS / "pilot"
 from scipy.stats import ttest_rel, wilcoxon, t as tdist
-f = pd.read_csv(RESULTS / "results_full.csv")
+f = pd.read_csv(PILOT / "results_full.csv")
 cl = f[f.task == "class"].copy()
 w = cl.pivot_table(index=["dataset", "seed"], columns="model", values="accuracy")
 pairs = [("TabPFN","TabICL"),("TabPFN","RandomForest"),("TabPFN","LightGBM"),
@@ -26,7 +27,7 @@ for a, b in pairs:
     rows.append({"pair": a + "-vs-" + b, "mean_diff": round(md,4),
                  "ci_lo": round(md-h,4), "ci_hi": round(md+h,4),
                  "t_p": round(tp,4), "wilcox_p": wp, "wins": wins})
-pd.DataFrame(rows).to_csv(RESULTS / "results_significance.csv", index=False)
+pd.DataFrame(rows).to_csv(PILOT / "results_significance.csv", index=False)
 print("saved results_significance.csv")
 rg = f[f.dataset == "california"].pivot_table(index="seed", columns="model", values="rmse")
 print(rg.round(4).to_string())
