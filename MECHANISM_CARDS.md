@@ -47,6 +47,16 @@ relational computation at L11); restriction removes the comparisons the final bl
 This is consistent with, and predicted by, the relational-signal card. Next lever: context
 TRANSPLANT (which rows), not restriction (how many).
 
+## Interventions v4 (context-ensembling across compositions) — FAILED held-out validation
+
+Seed 0: ens[opel-heavy, saab-heavy, balanced] = 0.894 vs full 0.871 (gap-closed 49%, no
+class degraded: bus 0.955/opel 0.810/saab 0.818/van 1.000). Seed 1 (held-out): ensemble 0.835
+vs full 0.882 — LOSES. The composition was tuned to seed 0 and did not transfer.
+Validated gap-closed: NEGATIVE. The validation rule caught a split-overfit false positive —
+the program working as designed. Standing: steering wheel confirmed (v2), operating-point
+frontier confirmed (v3), no passing accuracy intervention yet. Next candidates: per-row
+ADAPTIVE composition (kNN-chosen, not fixed menu) or conceding the frontier as the contribution.
+
 ## Interventions v3 (joint opel+saab enrichment) — no free lunch, operating-point frontier
 
 both-heavy (35/35/15/15): 0.824, opel 0.667 (DOWN vs random 0.714); confusable-only: 0.435
