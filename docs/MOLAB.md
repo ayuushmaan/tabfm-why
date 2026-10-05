@@ -50,6 +50,16 @@ The 20-col TabDPT edge did not survive stronger dilution — at 100 cols TabDPT 
 while TabICL is flat (even +0.009). Verdict: dilution-robustness crown goes to TabICL, not TabDPT.
 Lesson logged: borderline Δ≈0.02 effects on n≈231 must be stressed before becoming claims.
 
+## Update: 3-seed dilution rerun (Oct 2026, `/results/probes/dilution.csv`) — STRONGER RETRACTION
+
+60 fits (5 models × 4 noise levels × 3 seeds, standard 80/20 protocol). Seed-0 rows reproduce
+the old single-seed pattern almost exactly (noise-20: all ≈0.79; TabDPT 0.792) — pipeline verified.
+But 3-seed means are FLAT for every model at every noise level (all 0.75–0.77, seed SD ≈0.03
+swamps all deltas). Retracted: not only the TabDPT edge but also the TabICL "crown" — with
+proper seeds there is NO model × dilution effect at all on diabetes to 100 noise cols. All five
+FMs are uniformly dilution-robust. Lesson upgraded: single-seed probe deltas are worthless;
+stress with ≥3 seeds before any claim.
+
 ## Mitra usage (resolved)
 
 `TabularPredictor(hyperparameters={"MITRA": {}})` is flaky in this env (read-only array error
