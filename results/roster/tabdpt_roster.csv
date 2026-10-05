@@ -1,0 +1,49 @@
+dataset,kind,model,seed,metric,score,env,elapsed_s
+credit-g,cls,tabdpt,0,acc,0.785,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,6.6
+credit-g,cls,tabdpt,1,acc,0.79,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,7.3
+credit-g,cls,tabdpt,2,acc,0.72,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,7.9
+diabetes,cls,tabdpt,0,acc,0.7987012987012987,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,11.6
+diabetes,cls,tabdpt,1,acc,0.7272727272727273,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,12.1
+diabetes,cls,tabdpt,2,acc,0.7467532467532467,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,12.7
+breast-w,cls,tabdpt,0,acc,0.9714285714285714,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,16.4
+breast-w,cls,tabdpt,1,acc,0.9571428571428572,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,17.0
+breast-w,cls,tabdpt,2,acc,0.9642857142857144,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,17.5
+vehicle,cls,tabdpt,0,acc,0.8647058823529412,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,21.5
+vehicle,cls,tabdpt,1,acc,0.8647058823529412,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,22.0
+vehicle,cls,tabdpt,2,acc,0.9058823529411764,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,22.6
+segment,cls,tabdpt,0,acc,0.9913419913419912,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,26.1
+segment,cls,tabdpt,1,acc,0.9891774891774892,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,26.6
+segment,cls,tabdpt,2,acc,0.9891774891774892,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,27.2
+heart-statlog,cls,tabdpt,0,acc,0.8333333333333334,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,30.4
+heart-statlog,cls,tabdpt,1,acc,0.9074074074074074,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,31.0
+heart-statlog,cls,tabdpt,2,acc,0.7962962962962963,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,31.6
+balance-scale,cls,tabdpt,0,acc,0.992,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,34.6
+balance-scale,cls,tabdpt,1,acc,0.992,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,35.2
+balance-scale,cls,tabdpt,2,acc,0.968,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,35.7
+tic-tac-toe,cls,tabdpt,0,acc,0.9791666666666666,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,39.0
+tic-tac-toe,cls,tabdpt,1,acc,0.9947916666666666,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,39.5
+tic-tac-toe,cls,tabdpt,2,acc,0.9791666666666666,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,40.1
+letter,cls,tabdpt,0,acc,0.94,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,43.7
+letter,cls,tabdpt,1,acc,0.934,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,44.5
+letter,cls,tabdpt,2,acc,0.953,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,45.2
+mushroom,cls,tabdpt,0,acc,1.0,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,48.6
+mushroom,cls,tabdpt,1,acc,1.0,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,49.2
+mushroom,cls,tabdpt,2,acc,1.0,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,49.8
+iris,cls,tabdpt,0,acc,1.0,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,52.9
+iris,cls,tabdpt,1,acc,0.9666666666666668,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,53.4
+iris,cls,tabdpt,2,acc,1.0,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,54.0
+car,cls,tabdpt,0,acc,0.9740853658536586,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,63.0
+car,cls,tabdpt,1,acc,0.9679878048780488,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,65.5
+car,cls,tabdpt,2,acc,0.9771341463414634,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,67.9
+dresses-sales,cls,tabdpt,0,acc,0.64,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,71.0
+dresses-sales,cls,tabdpt,1,acc,0.61,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,71.6
+dresses-sales,cls,tabdpt,2,acc,0.59,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,72.2
+cpu_act,reg,tabdpt,0,rmse,2.1602830050534867,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,80.0
+cpu_act,reg,tabdpt,1,rmse,2.1543374090666405,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,80.6
+cpu_act,reg,tabdpt,2,rmse,2.1545713763058023,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,81.2
+puma8NH,reg,tabdpt,0,rmse,3.134084644459776,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,84.8
+puma8NH,reg,tabdpt,1,rmse,2.9874338900868063,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,85.4
+puma8NH,reg,tabdpt,2,rmse,3.3382279126561936,torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 scipy=1.18.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition,86.0
+boston,reg,tabdpt,0,rmse,3.793272378588925,fix531
+boston,reg,tabdpt,1,rmse,2.5120266549467964,fix531
+boston,reg,tabdpt,2,rmse,2.3139056871785346,fix531
