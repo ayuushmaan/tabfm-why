@@ -36,6 +36,17 @@ relative patterns trustworthy, absolute mass less so. TabICL weights exact (post
 - One-sentence mechanism: diffuse aggregation over the full context with a strong decoder that
   resolves confusable classes the representations alone do not linearly separate.
 
+## Interventions v1 (retrieval-restricted context) — FAILED, informatively
+
+Pre-registered prediction: kNN-local support (k=50/100/200) sharpens same-class neighborhoods,
+opel/saab recall rises toward TabPFN, bus/van unaffected. Result (clean env, per-row fits):
+k=50: 0.847 (opel 0.667), k=100: 0.847 (opel 0.714), k=200: 0.871, full: 0.871 (opel 0.762).
+Gap-closed: NEGATIVE — local context hurts opel, helps bus only marginally (1.000 vs 0.955).
+Interpretation: TabICL's opel verdict needs GLOBAL context (class balance/prototypes for the
+relational computation at L11); restriction removes the comparisons the final block needs.
+This is consistent with, and predicted by, the relational-signal card. Next lever: context
+TRANSPLANT (which rows), not restriction (how many).
+
 ## Contrast (the publishable claim)
 
 "Sharper attention = better model" is REJECTED on this pair: the winner attends more diffusely
