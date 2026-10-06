@@ -106,5 +106,35 @@ ax.set_title("Dilution stress: all FMs flat to 100 noise cols")
 ax.legend(fontsize=8)
 fig.tight_layout()
 fig.savefig(os.path.join(F, "probes", "dilution_lines.png"))
-print("dilution_lines.png")
+# ---------- 5. full roster heatmap (all models x all cls sets) ----------
+td = pd.read_csv(os.path.join(R, "roster", "tabdpt_roster.csv"))
+xgb = pd.read_csv(os.path.join(R, "xgboost", "xgb_roster.csv"))
+ag = pd.read_csv(os.path.join(R, "ceiling", "ag_ceiling.csv"))
+lx = pd.read_csv(os.path.join(R, "roster", "limix_5way.csv"))
+mi = pd.read_csv(os.path.join(R, "roster", "mitra_5way.csv"))
+models = [("TabDPT", td), ("XGBoost", xgb), ("AutoGluon", ag), ("LimiX", lx), ("Mitra", mi)]
+acc = td[td["metric"] == "acc"].groupby("dataset")["score"].mean()
+sets = list(acc.index)
+mat = np.full((len(sets), len(models)), np.nan)
+for j, (_, df) in enumerate(models):
+    g = df[df["metric"] == "acc"].groupby("dataset")["score"].mean()
+    for i, s in enumerate(sets):
+        if s in g.index:
+            mat[i, j] = g[s]
+fig, ax = plt.subplots(figsize=(7.5, 6.5))
+im = ax.imshow(mat, aspect="auto", vmin=0.55, vmax=1.0, cmap="YlGn")
+ax.set_xticks(range(len(models)))
+ax.set_xticklabels([m for m, _ in models])
+ax.set_yticks(range(len(sets)))
+ax.set_yticklabels(sets, fontsize=8)
+for i in range(len(sets)):
+    for j in range(len(models)):
+        if not np.isnan(mat[i, j]):
+            ax.text(j, i, f"{mat[i, j]:.3f}", ha="center", va="center", fontsize=7,
+                    color="white" if mat[i, j] > 0.85 else "black")
+fig.colorbar(im, ax=ax, label="accuracy (3-seed mean)")
+ax.set_title("Roster heatmap: 5 models x 13 sets (blank = model never ran that set)")
+fig.tight_layout()
+fig.savefig(os.path.join(F, "roster", "roster_heatmap.png"))
+print("roster_heatmap.png")
 print("ALL FIGURES DONE")
