@@ -1,0 +1,37 @@
+dataset,model,seed,metric,score,env
+credit-g,limix,0,acc,0.785,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+credit-g,limix,1,acc,0.78,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+credit-g,limix,2,acc,0.73,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+diabetes,limix,0,acc,0.8181818181818182,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+diabetes,limix,1,acc,0.7272727272727273,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+diabetes,limix,2,acc,0.7467532467532467,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+breast-w,limix,0,acc,0.9642857142857143,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+breast-w,limix,1,acc,0.9357142857142857,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+breast-w,limix,2,acc,0.9785714285714285,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+vehicle,limix,0,acc,0.8294117647058824,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+vehicle,limix,1,acc,0.8,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+vehicle,limix,2,acc,0.8117647058823529,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+segment,limix,0,acc,0.9891774891774892,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+segment,limix,1,acc,0.9848484848484849,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+segment,limix,2,acc,0.9913419913419913,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+heart-statlog,limix,0,acc,0.8333333333333334,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+heart-statlog,limix,1,acc,0.8888888888888888,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+heart-statlog,limix,2,acc,0.7777777777777778,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+balance-scale,limix,0,acc,0.992,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+balance-scale,limix,1,acc,1.0,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+balance-scale,limix,2,acc,0.928,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+tic-tac-toe,limix,0,acc,0.9791666666666666,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+tic-tac-toe,limix,1,acc,0.9947916666666666,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+tic-tac-toe,limix,2,acc,0.9791666666666666,torch=2.11.0+cu130 pandas=3.0.3 limix=patched-v101
+mushroom,limix,0,acc,1.0,torch=2.11.0+cu130 limix=patched-v101
+mushroom,limix,1,acc,1.0,torch=2.11.0+cu130 limix=patched-v101
+mushroom,limix,2,acc,1.0,torch=2.11.0+cu130 limix=patched-v101
+iris,limix,0,acc,1.0,torch=2.11.0+cu130 limix=patched-v101
+iris,limix,1,acc,0.9666666666666667,torch=2.11.0+cu130 limix=patched-v101
+iris,limix,2,acc,1.0,torch=2.11.0+cu130 limix=patched-v101
+car,limix,0,acc,0.9710365853658537,torch=2.11.0+cu130 limix=patched-v101
+car,limix,1,acc,0.9695121951219512,torch=2.11.0+cu130 limix=patched-v101
+car,limix,2,acc,0.9832317073170732,torch=2.11.0+cu130 limix=patched-v101
+dresses-sales,limix,0,acc,0.65,torch=2.11.0+cu130 limix=patched-v101
+dresses-sales,limix,1,acc,0.61,torch=2.11.0+cu130 limix=patched-v101
+dresses-sales,limix,2,acc,0.58,torch=2.11.0+cu130 limix=patched-v101
