@@ -130,3 +130,16 @@ are the same OpenML IDs used in the main roster where they overlap.
 
 Figures: `figures/domain/{leaderboard,heatmap_auc,imbalance_gap,domain_split}.png`
 (`scripts/plots_domain.py`). Logs: `results/domain/logs/`.
+
+### RQ2 follow-up: locality landmarkers (Oct 2026, boxes A + B)
+
+Ran `scripts/molab/rq2_domain.py` (sklearn only, CPU) sharded: **Box A = finance, Box B = health**,
+each writing `/marimo/landmarkers_<which>.csv` (168 rows = 8 sets × 3 seeds × 7 metrics:
+1NN acc/AUC, smoothness micro/macro, tree/logreg acc, tree-minus-linear). Same canonical prep and
+80/20 splits as `domain_run.py`. Both finished in seconds; pulled to
+`results/domain/landmarkers{,_finance,_health}.csv`. Correlation computed locally
+(`scripts/plots_rq2_domain.py`) -> `results/domain/rq2_domain_corr.csv` + `figures/domain/rq2_locality.png`.
+
+Result: FM advantage tracks WEAK local structure, replicating main RQ2 — vs 1NN AUC rho = -0.59
+(p=0.020), vs smoothness(macro) rho = -0.59 (p=0.021), excluding the degenerate creditcard-fraud
+point (n=15); nonlinearity control n.s. See `docs/RQ2.md`.

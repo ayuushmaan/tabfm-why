@@ -8,7 +8,7 @@ TabPFN ≈ TabICL > baselines — but the gap lives in confusable classes and we
 - **Mechanisms:** TabICL looks up sharply but reads out poorly (probe 0.894 > output 0.871); TabPFN aggregates diffusely with a strong decoder (0.918 > 0.894 probe). Opel/saab verdicts localize causally to final-block heads 1/4/5.
 - **RQ2:** FM advantage tracks WEAK local structure (vs 1NN ρ≈−0.62, Bonferroni-surviving) — non-locality, not nonlinearity.
 - **Interventions:** composition steers verdicts (opel 0.00→0.95) but zero-sum; ensemble +49% on-seed, fails held-out (caught by rule); steering inert. Criterion at 0 with informative failures.
-- **Domain (finance + health):** on 16 public domain sets (8 finance, 8 health), all 5 TFMs beat XGBoost on ROC-AUC on all 16/16; all 5 beat tuned AutoGluon on 13/16. FM mean AUC 0.904 vs 0.856 baselines. Accuracy alone is misleading on skewed sets (bank-marketing inflates +23 points) — why AUC / balanced-accuracy are the headline metrics here.
+- **Domain (finance + health):** on 16 public domain sets (8 finance, 8 health), all 5 TFMs beat XGBoost on ROC-AUC on all 16/16; all 5 beat tuned AutoGluon on 13/16. FM mean AUC 0.904 vs 0.856 baselines. Accuracy alone is misleading on skewed sets (bank-marketing inflates +23 points) — why AUC / balanced-accuracy are the headline metrics here. The RQ2 non-locality mechanism replicates: FM advantage vs 1NN-AUC ρ = −0.59 (p=0.020), smoothness ρ = −0.59 (p=0.021), with the tree-minus-linear nonlinearity control null.
 - Full analysis: [`REPORT.md`](REPORT.md) (CPU pilot) · Paper: [`PAPER_V5.md`](PAPER_V5.md) · Cards: [`MECHANISM_CARDS.md`](MECHANISM_CARDS.md) · RQ2: [`RQ2.md`](RQ2.md) · GPU notes: [`MOLAB.md`](MOLAB.md)
 
 ## Install

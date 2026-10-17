@@ -143,6 +143,17 @@ hidden: `creditcard-fraud` AUC is unstable under the 2000-row train cap (~4 posi
 some test folds are single-class → undefined AUC; XGBoost degenerated to AUC 0.5 there), so the
 fraud FM-vs-XGB margin is inflated and should be read with that caveat.
 
+Does the main-track mechanism survive here? We recomputed the cheap locality landmarkers
+(1NN accuracy/AUC, neighborhood smoothness, tree/logreg accuracy) on all 16 domain sets and
+correlated them with the FM advantage (mean FM AUC - mean baseline AUC). The main RQ2 result
+replicates: the FM advantage is largest where local structure is weakest, with Spearman
+rho = -0.59 for 1NN AUC (p=0.020) and rho = -0.59 for smoothness (p=0.021) once the degenerate
+creditcard-fraud point is excluded (n=15; with it, n=16, rho = -0.49/-0.52). The nonlinearity
+control (tree-minus-linear) stays null (rho = -0.15, n.s.), so as on the general suite the driver
+is non-locality, not nonlinearity. Caveat: n=16 limits power; we report the fraud outlier rather
+than prune it silently. The mechanistic "why" therefore carries over to real finance/health data,
+not just the curated general suite.
+
 ## 5. Mechanism Card: Vehicle
 
 TabICL (0.871): attention diffuse→sharp→diffuse→sharp (L8 mass 0.29/eff 644; L11 0.59/362);

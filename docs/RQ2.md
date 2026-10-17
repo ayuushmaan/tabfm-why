@@ -12,6 +12,24 @@ comparisons. Claim upgraded: datasets where LOCAL neighborhood structure is weak
 Linear LODO-R² still ≤0 (rank signal strong, linear generalization pending — needs
 nonlinear meta-model or the custom interaction/axis probes).
 
+## Domain replication: finance + health (16 sets, Oct 2026)
+
+Same analysis on the domain benchmark. Landmarkers are computed by
+`scripts/molab/rq2_domain.py` (`results/domain/landmarkers.csv`); the FM advantage is
+`mean(FM AUC) - mean(XGBoost, AutoGluon AUC)` from the stored domain CSVs. Spearman:
+
+- vs smoothness(macro): rho = **-0.52 (p=0.037)**; vs 1NN AUC: rho = -0.49 (p=0.057) [n=16].
+- Excluding the degenerate `creditcard-fraud` point (XGBoost AUC 0.5 under ~0.2% positives):
+  vs 1NN AUC rho = **-0.59 (p=0.020)**; vs smoothness(macro) rho = **-0.59 (p=0.021)** [n=15].
+- Nonlinearity control PERSISTS: tree-minus-linear rho = -0.15 (n.s.) -> the signal is
+  locality (1NN/smoothness), NOT nonlinearity.
+- Reads the same as the main 50-set result (rho ~ -0.6): the FM advantage is largest where
+  local neighborhood structure is weakest. The mechanism generalizes to real finance/health data.
+- Caveat: n=16 (power limited); the creditcard-fraud outlier is reported, not hidden.
+
+Artifacts: `results/domain/landmarkers{,_finance,_health}.csv`, `results/domain/rq2_domain_corr.csv`,
+`figures/domain/rq2_locality.png`.
+
 ## Earlier interim (25 sets, superseded but consistent)
 
 ## Headline gaps (TabPFN minus baseline, mean over 3 seeds)
@@ -48,3 +66,6 @@ puma8NH 2.576 (all trail TabPFN).
 - `bench25A.csv` (135 rows), `bench25B.csv` (129), `bench25PILOT.csv` (90)
 - `metafeatures.csv` (24 sets × PyMFE general/statistical/info-theory)
 - `landmarkers.csv` (1NN/stump/tree/logreg/tree-minus-linear/smoothness)
+- **Domain track (IN REPO):** `results/domain/landmarkers.csv` + `landmarkers_finance.csv` +
+  `landmarkers_health.csv` (16 sets × 3 seeds × 7 landmarkers); `results/domain/rq2_domain_corr.csv`;
+  `figures/domain/rq2_locality.png`; runner `scripts/molab/rq2_domain.py`.
