@@ -1,0 +1,180 @@
+=== setupA start ===
+$ pip install 'autogluon.tabular[mitra]==1.6.3'
+WARNING: The directory '/home/marimo/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting autogluon.tabular==1.6.3 (from autogluon.tabular[mitra]==1.6.3)
+  Downloading autogluon_tabular-1.6.3-py3-none-any.whl.metadata (18 kB)
+Requirement already satisfied: numpy<2.6.0,>=1.25.0 in /usr/local/lib/python3.13/site-packages (from autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (2.4.6)
+Requirement already satisfied: scipy<1.19,>=1.5.4 in /usr/local/lib/python3.13/site-packages (from autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (1.18.0)
+Collecting pandas<2.4.0,>=2.0.0 (from autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading pandas-2.3.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+Requirement already satisfied: scikit-learn<1.10.0,>=1.4.0 in /usr/local/lib/python3.13/site-packages (from autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (1.9.0)
+Requirement already satisfied: networkx<4,>=3.0 in /usr/local/lib/python3.13/site-packages (from autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (3.6.1)
+Collecting autogluon.core==1.6.3 (from autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading autogluon_core-1.6.3-py3-none-any.whl.metadata (14 kB)
+Collecting autogluon.features==1.6.3 (from autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading autogluon_features-1.6.3-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: tqdm<5,>=4.38 in /usr/local/lib/python3.13/site-packages (from autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (4.69.0)
+Requirement already satisfied: requests in /usr/local/lib/python3.13/site-packages (from autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (2.34.2)
+Requirement already satisfied: matplotlib<3.12,>=3.7.0 in /usr/local/lib/python3.13/site-packages (from autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (3.11.1)
+Collecting boto3<2,>=1.10 (from autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading boto3-1.43.114-py3-none-any.whl.metadata (6.6 kB)
+Requirement already satisfied: typing-extensions<5,>=4.14.0 in /usr/local/lib/python3.13/site-packages (from autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (4.16.0)
+Collecting autogluon.common==1.6.3 (from autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading autogluon_common-1.6.3-py3-none-any.whl.metadata (13 kB)
+Collecting pyarrow<25.0.0,>=23.0.1 (from autogluon.common==1.6.3->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading pyarrow-24.0.0-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Requirement already satisfied: psutil<7.3.0,>=5.7.3 in /usr/local/lib/python3.13/site-packages (from autogluon.common==1.6.3->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (7.2.2)
+Requirement already satisfied: joblib<1.7,>=1.2 in /usr/local/lib/python3.13/site-packages (from autogluon.common==1.6.3->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (1.5.3)
+Requirement already satisfied: pyyaml>=5.4 in /usr/local/lib/python3.13/site-packages (from autogluon.common==1.6.3->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (6.0.3)
+Requirement already satisfied: packaging>=20 in /usr/local/lib/python3.13/site-packages (from autogluon.common==1.6.3->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (26.2)
+Collecting loguru (from autogluon.tabular[mitra]==1.6.3)
+  Downloading loguru-0.7.3-py3-none-any.whl.metadata (22 kB)
+Collecting einx (from autogluon.tabular[mitra]==1.6.3)
+  Downloading einx-0.4.3-py3-none-any.whl.metadata (6.9 kB)
+Collecting omegaconf (from autogluon.tabular[mitra]==1.6.3)
+  Downloading omegaconf-2.4.0-py3-none-any.whl.metadata (4.9 kB)
+Requirement already satisfied: torch<2.14,>=2.10 in /usr/local/lib/python3.13/site-packages (from autogluon.tabular[mitra]==1.6.3) (2.11.0)
+Requirement already satisfied: transformers in /usr/local/lib/python3.13/site-packages (from autogluon.tabular[mitra]==1.6.3) (5.14.1)
+Requirement already satisfied: huggingface_hub<2.0,>=1.3 in /usr/local/lib/python3.13/site-packages (from huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (1.24.0)
+Requirement already satisfied: einops<0.9,>=0.7 in /usr/local/lib/python3.13/site-packages (from autogluon.tabular[mitra]==1.6.3) (0.8.2)
+Collecting botocore<1.44.0,>=1.43.114 (from boto3<2,>=1.10->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading botocore-1.43.114-py3-none-any.whl.metadata (5.6 kB)
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.10->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.10->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading s3transfer-0.19.2-py3-none-any.whl.metadata (1.7 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.13/site-packages (from botocore<1.44.0,>=1.43.114->boto3<2,>=1.10->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.13/site-packages (from botocore<1.44.0,>=1.43.114->boto3<2,>=1.10->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (2.7.0)
+Requirement already satisfied: click<9.0.0,>=8.4.2 in /usr/local/lib/python3.13/site-packages (from huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (8.4.2)
+Requirement already satisfied: filelock>=3.10.0 in /usr/local/lib/python3.13/site-packages (from huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (3.31.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.13/site-packages (from huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (2026.4.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.5.1 in /usr/local/lib/python3.13/site-packages (from huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (1.5.2)
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.13/site-packages (from huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (0.28.1)
+Requirement already satisfied: anyio in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (4.14.2)
+Requirement already satisfied: certifi in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (2026.6.17)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (3.18)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.13/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface_hub<2.0,>=1.3->huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (0.16.0)
+Requirement already satisfied: safetensors[torch] in /usr/local/lib/python3.13/site-packages (from huggingface_hub[torch]<2.0,>=1.3; extra == "mitra"->autogluon.tabular[mitra]==1.6.3) (0.8.0)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.13/site-packages (from matplotlib<3.12,>=3.7.0->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.13/site-packages (from matplotlib<3.12,>=3.7.0->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in /usr/local/lib/python3.13/site-packages (from matplotlib<3.12,>=3.7.0->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (4.63.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.13/site-packages (from matplotlib<3.12,>=3.7.0->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (1.5.0)
+Requirement already satisfied: pillow>=9 in /usr/local/lib/python3.13/site-packages (from matplotlib<3.12,>=3.7.0->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (12.3.0)
+Requirement already satisfied: pyparsing>=3 in /usr/local/lib/python3.13/site-packages (from matplotlib<3.12,>=3.7.0->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (3.3.2)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.13/site-packages (from pandas<2.4.0,>=2.0.0->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (2026.2)
+Collecting tzdata>=2022.7 (from pandas<2.4.0,>=2.0.0->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3)
+  Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.13/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.114->boto3<2,>=1.10->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (1.17.0)
+Requirement already satisfied: narwhals>=2.0.1 in /usr/local/lib/python3.13/site-packages (from scikit-learn<1.10.0,>=1.4.0->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (2.24.0)
+Requirement already satisfied: threadpoolctl>=3.5.0 in /usr/local/lib/python3.13/site-packages (from scikit-learn<1.10.0,>=1.4.0->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (3.6.0)
+Requirement already satisfied: setuptools<82 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (81.0.0)
+Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (1.14.0)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (3.1.6)
+Requirement already satisfied: cuda-toolkit==13.0.2 in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.0.2)
+Requirement already satisfied: cuda-bindings<14,>=13.0.3 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.3.1)
+Requirement already satisfied: nvidia-cudnn-cu13==9.19.0.56 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (9.19.0.56)
+Requirement already satisfied: nvidia-cusparselt-cu13==0.8.0 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (0.8.0)
+Requirement already satisfied: nvidia-nccl-cu13==2.28.9 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (2.28.9)
+Requirement already satisfied: nvidia-nvshmem-cu13==3.4.5 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (3.4.5)
+Requirement already satisfied: triton==3.6.0 in /usr/local/lib/python3.13/site-packages (from torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (3.6.0)
+Requirement already satisfied: nvidia-cublas==13.1.0.3.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.1.0.3)
+Requirement already satisfied: nvidia-cuda-runtime==13.0.96.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.0.96)
+Requirement already satisfied: nvidia-cufft==12.0.0.61.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (12.0.0.61)
+Requirement already satisfied: nvidia-cufile==1.15.1.6.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (1.15.1.6)
+Requirement already satisfied: nvidia-cuda-cupti==13.0.85.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.0.85)
+Requirement already satisfied: nvidia-curand==10.4.0.35.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (10.4.0.35)
+Requirement already satisfied: nvidia-cusolver==12.0.4.66.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (12.0.4.66)
+Requirement already satisfied: nvidia-cusparse==12.6.3.3.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (12.6.3.3)
+Requirement already satisfied: nvidia-nvjitlink==13.0.88.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.0.88)
+Requirement already satisfied: nvidia-cuda-nvrtc==13.0.88.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.0.88)
+Requirement already satisfied: nvidia-nvtx==13.0.85.* in /usr/local/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (13.0.85)
+Requirement already satisfied: cuda-pathfinder>=1.4.2 in /usr/local/lib/python3.13/site-packages (from cuda-bindings<14,>=13.0.3->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (1.5.6)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.13/site-packages (from sympy>=1.13.3->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (1.3.0)
+Collecting frozendict (from einx->autogluon.tabular[mitra]==1.6.3)
+  Downloading frozendict-2.4.7-py3-none-any.whl.metadata (23 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.13/site-packages (from jinja2->torch<2.14,>=2.10->autogluon.tabular[mitra]==1.6.3) (3.0.3)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.13/site-packages (from requests->autogluon.core==1.6.3->autogluon.tabular==1.6.3->autogluon.tabular[mitra]==1.6.3) (3.4.9)
+Requirement already satisfied: regex>=2025.10.22 in /usr/local/lib/python3.13/site-packages (from transformers->autogluon.tabular[mitra]==1.6.3) (2026.7.19)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in /usr/local/lib/python3.13/site-packages (from transformers->autogluon.tabular[mitra]==1.6.3) (0.22.2)
+Requirement already satisfied: typer in /usr/local/lib/python3.13/site-packages (from transformers->autogluon.tabular[mitra]==1.6.3) (0.27.0)
+Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.13/site-packages (from typer->transformers->autogluon.tabular[mitra]==1.6.3) (1.5.4)
+Requirement already satisfied: rich>=13.8.0 in /usr/local/lib/python3.13/site-packages (from typer->transformers->autogluon.tabular[mitra]==1.6.3) (15.0.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.13/site-packages (from typer->transformers->autogluon.tabular[mitra]==1.6.3) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.13/site-packages (from rich>=13.8.0->typer->transformers->autogluon.tabular[mitra]==1.6.3) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.13/site-packages (from rich>=13.8.0->typer->transformers->autogluon.tabular[mitra]==1.6.3) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.13/site-packages (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers->autogluon.tabular[mitra]==1.6.3) (0.1.2)
+Downloading autogluon_tabular-1.6.3-py3-none-any.whl (514 kB)
+Downloading autogluon_core-1.6.3-py3-none-any.whl (248 kB)
+Downloading autogluon_common-1.6.3-py3-none-any.whl (90 kB)
+Downloading autogluon_features-1.6.3-py3-none-any.whl (112 kB)
+Downloading boto3-1.43.114-py3-none-any.whl (140 kB)
+Downloading botocore-1.43.114-py3-none-any.whl (16.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 42.8 MB/s  0:00:00
+Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Downloading pandas-2.3.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 51.1 MB/s  0:00:00
+Downloading pyarrow-24.0.0-cp313-cp313-manylinux_2_28_x86_64.whl (48.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.9/48.9 MB 47.2 MB/s  0:00:01
+Downloading s3transfer-0.19.2-py3-none-any.whl (90 kB)
+Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+Downloading einx-0.4.3-py3-none-any.whl (163 kB)
+Downloading frozendict-2.4.7-py3-none-any.whl (16 kB)
+Downloading loguru-0.7.3-py3-none-any.whl (61 kB)
+Downloading omegaconf-2.4.0-py3-none-any.whl (254 kB)
+Installing collected packages: tzdata, pyarrow, omegaconf, loguru, jmespath, frozendict, pandas, einx, botocore, s3transfer, boto3, autogluon.common, autogluon.features, autogluon.core, autogluon.tabular
+  Attempting uninstall: pyarrow
+    Found existing installation: pyarrow 25.0.0
+    Uninstalling pyarrow-25.0.0:
+      Successfully uninstalled pyarrow-25.0.0
+  Attempting uninstall: pandas
+    Found existing installation: pandas 3.0.3
+    Uninstalling pandas-3.0.3:
+      Successfully uninstalled pandas-3.0.3
+
+Successfully installed autogluon.common-1.6.3 autogluon.core-1.6.3 autogluon.features-1.6.3 autogluon.tabular-1.6.3 boto3-1.43.114 botocore-1.43.114 einx-0.4.3 frozendict-2.4.7 jmespath-1.1.0 loguru-0.7.3 omegaconf-2.4.0 pandas-2.3.3 pyarrow-24.0.0 s3transfer-0.19.2 tzdata-2026.5
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 25.3 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+[exit 0]
+$ git clone --depth 1 https://github.com/layer6ai-labs/TabDPT.git /marimo/tabdpt
+Cloning into '/marimo/tabdpt'...
+[exit 0]
+$ git clone --depth 1 https://github.com/zzzace2000/LimiX.git /marimo/limix
+Cloning into '/marimo/limix'...
+fatal: could not read Username for 'https://github.com': No such device or address
+[exit 128]
+$ pip install huggingface_hub
+WARNING: The directory '/home/marimo/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Requirement already satisfied: huggingface_hub in /usr/local/lib/python3.13/site-packages (1.24.0)
+Requirement already satisfied: click<9.0.0,>=8.4.2 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (8.4.2)
+Requirement already satisfied: filelock>=3.10.0 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (3.31.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (2026.4.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.5.1 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (1.5.2)
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (0.28.1)
+Requirement already satisfied: packaging>=20.9 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (26.2)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (6.0.3)
+Requirement already satisfied: tqdm>=4.42.1 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (4.69.0)
+Requirement already satisfied: typing-extensions>=4.1.0 in /usr/local/lib/python3.13/site-packages (from huggingface_hub) (4.16.0)
+Requirement already satisfied: anyio in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub) (4.14.2)
+Requirement already satisfied: certifi in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub) (2026.6.17)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub) (3.18)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.13/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface_hub) (0.16.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 25.3 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+[exit 0]
+$ python -c "from huggingface_hub import snapshot_download; snapshot_download('stable-ai/LimiX-2M', cache_dir='/tmp/limix_cache')"
+Fetching 46 files:   0%|          | 0/46 [00:00<?, ?it/s]Fetching 46 files:   4%|▍         | 2/46 [00:00<00:02, 16.65it/s]Fetching 46 files:   9%|▊         | 4/46 [00:00<00:06,  6.57it/s]Fetching 46 files:  30%|███       | 14/46 [00:00<00:01, 17.27it/s]Fetching 46 files:  48%|████▊     | 22/46 [00:01<00:00, 25.52it/s]Fetching 46 files:  57%|█████▋    | 26/46 [00:01<00:00, 25.47it/s]Fetching 46 files:  76%|███████▌  | 35/46 [00:01<00:00, 32.82it/s]Fetching 46 files:  87%|████████▋ | 40/46 [00:01<00:00, 29.09it/s]Fetching 46 files:  96%|█████████▌| 44/46 [00:01<00:00, 27.45it/s]Fetching 46 files: 100%|██████████| 46/46 [00:01<00:00, 24.14it/s]
+[exit 0]
+$ python /marimo/limix_patch.py
+patched copy saved /tmp/limix_cache/LimiX-2M-v101.ckpt
+Traceback (most recent call last):
+  File "/marimo/limix_patch.py", line 43, in <module>
+    from model.v1_0.loading import build_model
+ModuleNotFoundError: No module named 'model'
+[exit 1]
+=== SETUP_DONE ===

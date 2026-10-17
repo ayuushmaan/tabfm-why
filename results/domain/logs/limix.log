@@ -1,0 +1,127 @@
+ENV: model=limix torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+credit-g: n=1000 f=20 k=2 domain=finance
+  credit-g/0 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  credit-g/1 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  credit-g/2 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+australian: n=690 f=14 k=2 domain=finance
+  australian/0 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  australian/1 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  australian/2 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+bank-marketing: n=45211 f=16 k=2 domain=finance
+  bank-marketing/0 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  bank-marketing/1 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  bank-marketing/2 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+default-credit-clients: n=30000 f=23 k=2 domain=finance
+  default-credit-clients/0 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  default-credit-clients/1 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+  default-credit-clients/2 FAIL ModuleNotFoundError: No module named 'nvtx' acc=nan auc=nan bal=nan t=0.0s
+ENV: model=limix torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+skip credit-g (all seeds done)
+skip australian (all seeds done)
+skip bank-marketing (all seeds done)
+skip default-credit-clients (all seeds done)
+ENV: model=limix torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+credit-g: n=1000 f=20 k=2 domain=finance
+  credit-g/0 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.11s
+  credit-g/1 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+  credit-g/2 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+australian: n=690 f=14 k=2 domain=finance
+  australian/0 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+  australian/1 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+  australian/2 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+bank-marketing: n=45211 f=16 k=2 domain=finance
+  bank-marketing/0 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+  bank-marketing/1 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+  bank-marketing/2 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+default-credit-clients: n=30000 f=23 k=2 domain=finance
+  default-credit-clients/0 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+  default-credit-clients/1 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+  default-credit-clients/2 FAIL ModuleNotFoundError: No module named 'kditransform' acc=nan auc=nan bal=nan t=0.01s
+ENV: model=limix torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+credit-g: n=1000 f=20 k=2 domain=finance
+arch_version=1.0 -> inference.v1_0.predictor (inference.v1_0.predictor)
+use limix v1.0
+  credit-g/0 OK acc=0.7850 auc=0.8511 bal=0.6893 t=1.46s
+  credit-g/1 OK acc=0.7800 auc=0.8054 bal=0.7000 t=0.11s
+  credit-g/2 OK acc=0.7300 auc=0.7221 bal=0.6310 t=0.1s
+australian: n=690 f=14 k=2 domain=finance
+  australian/0 OK acc=0.8696 auc=0.9423 bal=0.8661 t=0.1s
+  australian/1 OK acc=0.8841 auc=0.9449 bal=0.8876 t=0.09s
+  australian/2 OK acc=0.9130 auc=0.9787 bal=0.9067 t=0.1s
+bank-marketing: n=45211 f=16 k=2 domain=finance
+  bank-marketing/0 OK acc=0.9020 auc=0.9307 bal=0.6689 t=0.13s
+  bank-marketing/1 OK acc=0.9190 auc=0.9468 bal=0.7265 t=0.13s
+  bank-marketing/2 OK acc=0.9020 auc=0.9340 bal=0.6831 t=0.13s
+default-credit-clients: n=30000 f=23 k=2 domain=finance
+  default-credit-clients/0 OK acc=0.8240 auc=0.8007 bal=0.6659 t=0.16s
+  default-credit-clients/1 OK acc=0.8170 auc=0.7661 bal=0.6564 t=0.16s
+  default-credit-clients/2 OK acc=0.8270 auc=0.7837 bal=0.6400 t=0.16s
+LOAD-FAIL taiwan-bankruptcy: ValueError: md5 checksum of local file for https://openml.org/data/v1/download/21829696/SantanderCustomerSatisfaction.arff does not match description: expected: 4f816b123bb
+creditcard-fraud: n=284807 f=29 k=2 domain=finance
+  creditcard-fraud/0 OK acc=1.0000 auc=nan bal=1.0000 t=0.31s
+  creditcard-fraud/1 OK acc=0.9990 auc=1.0000 bal=0.9995 t=0.25s
+  creditcard-fraud/2 OK acc=0.9990 auc=1.0000 bal=0.7500 t=0.4s
+online-shoppers: n=12330 f=17 k=2 domain=finance
+  online-shoppers/0 OK acc=0.8890 auc=0.9271 bal=0.7673 t=0.22s
+  online-shoppers/1 OK acc=0.9100 auc=0.9346 bal=0.7741 t=0.21s
+  online-shoppers/2 OK acc=0.8880 auc=0.9232 bal=0.7551 t=0.19s
+german-credit-numeric: n=1458 f=37 k=2 domain=finance
+  german-credit-numeric/0 OK acc=0.9212 auc=0.9539 bal=0.7760 t=0.16s
+  german-credit-numeric/1 OK acc=0.9212 auc=0.9600 bal=0.7760 t=0.16s
+  german-credit-numeric/2 OK acc=0.9110 auc=0.9538 bal=0.7224 t=0.16s
+diabetes: n=768 f=8 k=2 domain=health
+  diabetes/0 OK acc=0.8182 auc=0.8789 bal=0.7876 t=0.1s
+  diabetes/1 OK acc=0.7273 auc=0.8183 bal=0.6707 t=0.1s
+  diabetes/2 OK acc=0.7468 auc=0.8063 bal=0.6985 t=0.1s
+breast-w: n=699 f=9 k=2 domain=health
+  breast-w/0 OK acc=0.9714 auc=0.9952 bal=0.9783 t=0.11s
+  breast-w/1 OK acc=0.9429 auc=0.9887 bal=0.9466 t=0.1s
+  breast-w/2 OK acc=0.9714 auc=0.9991 bal=0.9683 t=0.1s
+heart-statlog: n=270 f=13 k=2 domain=health
+  heart-statlog/0 OK acc=0.8333 auc=0.8667 bal=0.8208 t=0.11s
+  heart-statlog/1 OK acc=0.8889 auc=0.9542 bal=0.8792 t=0.12s
+  heart-statlog/2 OK acc=0.7778 auc=0.8694 bal=0.7667 t=0.11s
+thyroid: n=3772 f=29 k=2 domain=health
+  thyroid/0 OK acc=0.9841 auc=0.9969 bal=0.9102 t=0.2s
+  thyroid/1 OK acc=0.9921 auc=0.9940 bal=0.9449 t=0.2s
+  thyroid/2 OK acc=0.9921 auc=0.9986 bal=0.9551 t=0.19s
+hepatitis: n=155 f=19 k=2 domain=health
+  hepatitis/0 OK acc=0.8065 auc=0.8400 bal=0.6900 t=0.08s
+  hepatitis/1 OK acc=0.8710 auc=0.9533 bal=0.7300 t=0.08s
+  hepatitis/2 OK acc=0.9677 auc=1.0000 bal=0.9167 t=0.09s
+ilpd: n=583 f=10 k=2 domain=health
+  ilpd/0 OK acc=0.7265 auc=0.8242 bal=0.5468 t=0.08s
+  ilpd/1 OK acc=0.6923 auc=0.7395 bal=0.5314 t=0.08s
+  ilpd/2 OK acc=0.7179 auc=0.7300 bal=0.6189 t=0.11s
+breast-cancer-diag: n=569 f=30 k=2 domain=health
+  breast-cancer-diag/0 OK acc=0.9649 auc=0.9944 bal=0.9623 t=0.11s
+  breast-cancer-diag/1 OK acc=0.9737 auc=0.9983 bal=0.9742 t=0.1s
+  breast-cancer-diag/2 OK acc=0.9825 auc=0.9937 bal=0.9812 t=0.11s
+haberman: n=306 f=3 k=2 domain=health
+  haberman/0 OK acc=0.7581 auc=0.7656 bal=0.5720 t=0.08s
+  haberman/1 OK acc=0.6452 auc=0.5564 bal=0.4755 t=0.09s
+  haberman/2 OK acc=0.7581 auc=0.7772 bal=0.5924 t=0.11s
+ALL DONE [754s]
+ENV: model=limix torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+skip credit-g (all seeds done)
+skip australian (all seeds done)
+skip bank-marketing (all seeds done)
+skip default-credit-clients (all seeds done)
+banknote-authentication: n=1372 f=4 k=2 domain=finance
+arch_version=1.0 -> inference.v1_0.predictor (inference.v1_0.predictor)
+use limix v1.0
+  banknote-authentication/0 OK acc=1.0000 auc=1.0000 bal=1.0000 t=1.95s
+  banknote-authentication/1 OK acc=1.0000 auc=1.0000 bal=1.0000 t=0.14s
+  banknote-authentication/2 OK acc=1.0000 auc=1.0000 bal=1.0000 t=0.11s
+skip creditcard-fraud (all seeds done)
+skip online-shoppers (all seeds done)
+skip german-credit-numeric (all seeds done)
+skip diabetes (all seeds done)
+skip breast-w (all seeds done)
+skip heart-statlog (all seeds done)
+skip thyroid (all seeds done)
+skip hepatitis (all seeds done)
+skip ilpd (all seeds done)
+skip breast-cancer-diag (all seeds done)
+skip haberman (all seeds done)
+ALL DONE [7s]

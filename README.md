@@ -8,7 +8,8 @@ TabPFN ≈ TabICL > baselines — but the gap lives in confusable classes and we
 - **Mechanisms:** TabICL looks up sharply but reads out poorly (probe 0.894 > output 0.871); TabPFN aggregates diffusely with a strong decoder (0.918 > 0.894 probe). Opel/saab verdicts localize causally to final-block heads 1/4/5.
 - **RQ2:** FM advantage tracks WEAK local structure (vs 1NN ρ≈−0.62, Bonferroni-surviving) — non-locality, not nonlinearity.
 - **Interventions:** composition steers verdicts (opel 0.00→0.95) but zero-sum; ensemble +49% on-seed, fails held-out (caught by rule); steering inert. Criterion at 0 with informative failures.
-- Full analysis: [`REPORT.md`](REPORT.md) (CPU pilot) · Paper: [`PAPER_V3.md`](PAPER_V3.md) · Cards: [`MECHANISM_CARDS.md`](MECHANISM_CARDS.md) · RQ2: [`RQ2.md`](RQ2.md) · GPU notes: [`MOLAB.md`](MOLAB.md)
+- **Domain (finance + health):** on 16 public domain sets (8 finance, 8 health), all 5 TFMs beat XGBoost on ROC-AUC on all 16/16; all 5 beat tuned AutoGluon on 13/16. FM mean AUC 0.904 vs 0.856 baselines. Accuracy alone is misleading on skewed sets (bank-marketing inflates +23 points) — why AUC / balanced-accuracy are the headline metrics here.
+- Full analysis: [`REPORT.md`](REPORT.md) (CPU pilot) · Paper: [`PAPER_V5.md`](PAPER_V5.md) · Cards: [`MECHANISM_CARDS.md`](MECHANISM_CARDS.md) · RQ2: [`RQ2.md`](RQ2.md) · GPU notes: [`MOLAB.md`](MOLAB.md)
 
 ## Install
 
@@ -45,9 +46,12 @@ CPU-only pilot, ~30–60 min total. Protocol: 7 TabArena datasets, 80/20 stratif
 | `src/plots.py` / `src/sigtest.py` | Figures / paired significance tests |
 | `src/harness/` | Resume-aware Parquet suite runner (Phase 0) |
 | `results/pilot/` | Pilot raw result CSVs |
+| `results/domain/` | Domain (finance + health) benchmark CSVs + logs, 7 models x 16 sets |
 | `figures/pilot/` | Pilot plots |
+| `figures/domain/` | Domain leaderboard, heatmap, imbalance-gap, vertical-split plots |
+| `scripts/molab/domain_*.py` | Domain dataset manifest + 7-model runner |
 | `docs/` | Pilot report, plan, GPU notes, RQ2, mechanism cards |
-| `paper/` | Paper drafts (`PAPER_V3.md` current) |
+| `paper/` | Paper drafts (`PAPER_V5.md` current) |
 | `unslop-audit/` | Writing-audit scanner reports |
 
 ## Citation

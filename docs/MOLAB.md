@@ -102,3 +102,31 @@ scipy 1.18.0) reproduces 0.8706 × 3 fits deterministically. The "22pp torch swi
 is RETRACTED. Lab rules adopted: (1) pin full env versions at session start and log with every
 result; (2) never swap torch mid-session — restart kernel instead; (3) any cross-session
 discrepancy triggers an env-diff before any scientific interpretation.
+
+## Domain benchmark — finance + health (Oct 2026, boxes A + B)
+
+Second, domain-specific track: the same 7-model roster on **16 public OpenML/UCI sets**
+(8 finance, 8 health) with a **canonical shared prep** (median-impute, ordinal-encode, float64)
+so every model sees identical splits/data. New headline metric is **ROC-AUC + balanced-accuracy**
+(accuracy alone is misleading on skewed domain sets).
+
+| Model | Box | Entry |
+|---|---|---|
+| TabPFN / TabICL / XGBoost | B | already installed |
+| Mitra / AutoGluon / TabDPT / LimiX | A | `pip install autogluon.tabular[mitra,lightgbm,catboost,fastai]`, clone TabDPT + LimiX, patch ckpt, `faiss-cpu` + `nvtx` + `kditransform` + `einops` |
+
+**Results** (`results/domain/domain_<model>.csv`, 192 rows = 16 sets × 3 seeds × 4 metrics each,
+`scripts/molab/domain_run.py` + `domain_sets.py`):
+
+- **All 5 TFMs beat XGBoost on ROC-AUC across all 16/16** sets; **all 5 beat tuned AutoGluon on 13/16**. FM mean AUC 0.9045 vs baselines 0.8562 (+4.8 points).
+- Best model per set (AUC): TabPFN 6, LimiX 4, TabDPT 3, Mitra 2, AutoGluon 1, XGBoost 0.
+- Finance mean AUC (TabPFN 0.923) > health (0.892); baseline gap is largest on finance (XGB 0.842).
+- **Imbalance is the story**: bank-marketing accuracy 0.90 but balanced-acc 0.69 — majority-class inflation of ~23 points. FMs hold the smallest accuracy→balanced-acc gap (TabPFN +0.078 vs AutoGluon +0.109).
+- **Caveat (documented):** `creditcard-fraud` AUC is unstable — the 2000-row train cap leaves ~4 positives, so some test folds have a single class (undefined AUC; `tabpfn`/`xgb` each logged 1 NaN; XGB degenerated to AUC 0.5). The FM-vs-XGB fraud margin is inflated for this reason.
+
+**Set swap:** `taiwan-bankruptcy` (OpenML 42395) served a mislabeled/corrupt ARFF
+(md5 mismatch) → replaced with verified `banknote-authentication` (1462). The other 15 sets
+are the same OpenML IDs used in the main roster where they overlap.
+
+Figures: `figures/domain/{leaderboard,heatmap_auc,imbalance_gap,domain_split}.png`
+(`scripts/plots_domain.py`). Logs: `results/domain/logs/`.

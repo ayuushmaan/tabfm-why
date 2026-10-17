@@ -111,6 +111,38 @@ snapshot to 4 decimals): diabetes 0.764/0.751, credit-g 0.765/0.770, vehicle 0.8
 breast-w 0.960/0.962, segment 0.988/0.987. Probes: XOR 0.97–0.99 vs 0.51; MCAR ≤0.009 at 30%;
 ECE ≈0.035 vs 0.13 LGBM; shortcut drops ≤0.030; noise +0.030 vs −0.043.
 
+## 4b. Domain benchmark: finance + health (16 sets, ROC-AUC headline)
+
+To test whether the FM advantage survives where it matters operationally, we ran the same
+seven-model roster on **16 public OpenML/UCI domain sets** (8 finance, 8 health) with a single
+canonical prep (median-impute, ordinal-encode, float64) so every model sees identical splits
+and data. Because domain sets are heavily skewed, the headline metric is **ROC-AUC** (plus
+balanced-accuracy); accuracy alone is reported but not trusted.
+
+| Model | mean AUC (16) | finance | health | mean bal-acc |
+|---|---|---|---|---|
+| TabPFN | **0.907** | 0.923 | 0.892 | 0.799 |
+| TabDPT | 0.906 | 0.920 | 0.892 | 0.796 |
+| TabICL | 0.905 | 0.919 | 0.891 | 0.796 |
+| LimiX | 0.904 | 0.919 | 0.889 | 0.791 |
+| Mitra | 0.900 | 0.916 | 0.884 | 0.783 |
+| AutoGluon | 0.864 | 0.864 | 0.864 | 0.757 |
+| XGBoost | 0.849 | 0.842 | 0.855 | 0.764 |
+
+Headline: **all five TFMs beat XGBoost on ROC-AUC on all 16/16** sets, and **all five beat the
+tuned AutoGluon ceiling on 13/16**. FM mean AUC 0.9045 vs baselines 0.8562 (+4.8 points). Best
+model per set (AUC): TabPFN 6, LimiX 4, TabDPT 3, Mitra 2, AutoGluon 1, XGBoost 0. The margin
+is widest on the small/skewed health sets (haberman +9.6, hepatitis +8.9) and on finance risk
+sets (default-credit +4.3, bank-marketing +4.2).
+
+The imbalance story is the methodological point: bank-marketing scores accuracy 0.90 but
+balanced-accuracy 0.69 — a ~23-point majority-class inflation. The TFMs carry the smallest
+accuracy→balanced-accuracy gap (TabPFN +0.078 vs AutoGluon +0.109), i.e. their accuracy is
+less inflated and their ranking quality (AUC) is higher. One caveat is documented rather than
+hidden: `creditcard-fraud` AUC is unstable under the 2000-row train cap (~4 positives in train;
+some test folds are single-class → undefined AUC; XGBoost degenerated to AUC 0.5 there), so the
+fraud FM-vs-XGB margin is inflated and should be read with that caveat.
+
 ## 5. Mechanism Card: Vehicle
 
 TabICL (0.871): attention diffuse→sharp→diffuse→sharp (L8 mass 0.29/eff 644; L11 0.59/362);

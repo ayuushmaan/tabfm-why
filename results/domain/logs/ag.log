@@ -1,0 +1,221 @@
+ENV: model=ag torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+credit-g: n=1000 f=20 k=2 domain=finance
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  credit-g/0 OK acc=0.7800 auc=0.8494 bal=0.7048 t=9.87s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  credit-g/1 OK acc=0.7050 auc=0.7165 bal=0.6179 t=10.0s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  credit-g/2 OK acc=0.7050 auc=0.7258 bal=0.6417 t=6.97s
+australian: n=690 f=14 k=2 domain=finance
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  australian/0 OK acc=0.8478 auc=0.9287 bal=0.8398 t=5.33s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  australian/1 OK acc=0.8913 auc=0.9401 bal=0.8924 t=7.15s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  australian/2 OK acc=0.9275 auc=0.9696 bal=0.9231 t=5.96s
+bank-marketing: n=45211 f=16 k=2 domain=finance
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  bank-marketing/0 OK acc=0.8970 auc=0.8681 bal=0.6109 t=7.61s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  bank-marketing/1 OK acc=0.9160 auc=0.9347 bal=0.6592 t=7.56s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  bank-marketing/2 OK acc=0.8910 auc=0.9006 bal=0.6309 t=6.65s
+default-credit-clients: n=30000 f=23 k=2 domain=finance
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  default-credit-clients/0 OK acc=0.8040 auc=0.7315 bal=0.6260 t=8.74s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  default-credit-clients/1 OK acc=0.8030 auc=0.7270 bal=0.6028 t=6.95s
+	Warning: Exception caused LightGBMXT to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused LightGBM to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+	Warning: Exception caused CatBoost to fail during training (ImportError)... Skipping this model.
+		`import catboost` failed. A quick tip is to install via `pip install autogluon.tabular[catboost]==1.6.3`.
+	Warning: Exception caused NeuralNetFastAI to fail during training (ImportError)... Skipping this model.
+		Import fastai failed. A quick tip is to install via `pip install autogluon.tabular[fastai]==1.6.3`. 
+	Warning: Exception caused LightGBMLarge to fail during training (ImportError)... Skipping this model.
+		`import lightgbm` failed. A quick tip is to install via `pip install autogluon.tabular[lightgbm]==1.6.3`.
+  default-credit-clients/2 OK acc=0.8220 auc=0.7671 bal=0.6442 t=7.15s
+ENV: model=ag torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+credit-g: n=1000 f=20 k=2 domain=finance
+  credit-g/0 OK acc=0.8000 auc=0.8269 bal=0.7476 t=22.08s
+  credit-g/1 OK acc=0.7050 auc=0.7165 bal=0.6179 t=14.08s
+  credit-g/2 OK acc=0.6950 auc=0.7239 bal=0.6202 t=13.12s
+australian: n=690 f=14 k=2 domain=finance
+  australian/0 OK acc=0.8623 auc=0.9438 bal=0.8579 t=9.7s
+  australian/1 OK acc=0.8913 auc=0.9401 bal=0.8924 t=9.39s
+  australian/2 OK acc=0.8986 auc=0.9781 bal=0.8921 t=9.79s
+bank-marketing: n=45211 f=16 k=2 domain=finance
+  bank-marketing/0 OK acc=0.8960 auc=0.8908 bal=0.5710 t=14.03s
+  bank-marketing/1 OK acc=0.9160 auc=0.9347 bal=0.6592 t=15.25s
+  bank-marketing/2 OK acc=0.8930 auc=0.8809 bal=0.6109 t=13.72s
+default-credit-clients: n=30000 f=23 k=2 domain=finance
+  default-credit-clients/0 OK acc=0.8100 auc=0.7556 bal=0.6378 t=15.07s
+  default-credit-clients/1 OK acc=0.8030 auc=0.7270 bal=0.6028 t=13.12s
+  default-credit-clients/2 OK acc=0.8280 auc=0.7675 bal=0.6479 t=13.06s
+LOAD-FAIL taiwan-bankruptcy: ValueError: md5 checksum of local file for https://openml.org/data/v1/download/21829696/SantanderCustomerSatisfaction.arff does not match description: expected: 4f816b123bb
+creditcard-fraud: n=284807 f=29 k=2 domain=finance
+  creditcard-fraud/0 OK acc=1.0000 auc=nan bal=1.0000 t=8.03s
+  creditcard-fraud/1 OK acc=0.9970 auc=0.9995 bal=0.9985 t=8.06s
+  creditcard-fraud/2 OK acc=0.9980 auc=0.5005 bal=0.5000 t=8.64s
+online-shoppers: n=12330 f=17 k=2 domain=finance
+  online-shoppers/0 OK acc=0.8830 auc=0.9099 bal=0.7335 t=19.26s
+  online-shoppers/1 OK acc=0.8960 auc=0.9091 bal=0.6877 t=16.22s
+  online-shoppers/2 OK acc=0.8940 auc=0.9138 bal=0.7335 t=14.97s
+german-credit-numeric: n=1458 f=37 k=2 domain=finance
+  german-credit-numeric/0 OK acc=0.9041 auc=0.7895 bal=0.6708 t=15.43s
+  german-credit-numeric/1 OK acc=0.9007 auc=0.9440 bal=0.7285 t=18.12s
+  german-credit-numeric/2 OK acc=0.9041 auc=0.9276 bal=0.8140 t=16.82s
+diabetes: n=768 f=8 k=2 domain=health
+  diabetes/0 OK acc=0.7857 auc=0.8301 bal=0.7456 t=9.47s
+  diabetes/1 OK acc=0.7338 auc=0.8187 bal=0.6800 t=9.43s
+  diabetes/2 OK acc=0.7532 auc=0.8000 bal=0.6865 t=9.43s
+breast-w: n=699 f=9 k=2 domain=health
+  breast-w/0 OK acc=0.9429 auc=0.9844 bal=0.9416 t=7.64s
+  breast-w/1 OK acc=0.9429 auc=0.9776 bal=0.9466 t=7.3s
+  breast-w/2 OK acc=0.9429 auc=0.9968 bal=0.9216 t=7.44s
+heart-statlog: n=270 f=13 k=2 domain=health
+  heart-statlog/0 OK acc=0.7963 auc=0.8472 bal=0.7917 t=6.47s
+  heart-statlog/1 OK acc=0.8889 auc=0.9194 bal=0.8833 t=8.02s
+  heart-statlog/2 OK acc=0.7222 auc=0.8736 bal=0.7083 t=7.72s
+thyroid: n=3772 f=29 k=2 domain=health
+  thyroid/0 OK acc=0.9841 auc=0.9952 bal=0.9102 t=13.09s
+  thyroid/1 OK acc=0.9828 auc=0.9919 bal=0.8892 t=17.54s
+  thyroid/2 OK acc=0.9854 auc=0.9945 bal=0.8906 t=14.87s
+hepatitis: n=155 f=19 k=2 domain=health
+  hepatitis/0 OK acc=0.8710 auc=0.6400 bal=0.6667 t=9.13s
+  hepatitis/1 OK acc=0.8387 auc=0.9400 bal=0.6467 t=7.89s
+  hepatitis/2 OK acc=0.8710 auc=0.8800 bal=0.6667 t=7.59s
+ilpd: n=583 f=10 k=2 domain=health
+  ilpd/0 OK acc=0.7265 auc=0.8009 bal=0.5381 t=7.05s
+  ilpd/1 OK acc=0.7009 auc=0.7424 bal=0.5461 t=7.48s
+  ilpd/2 OK acc=0.7179 auc=0.7424 bal=0.5581 t=8.02s
+breast-cancer-diag: n=569 f=30 k=2 domain=health
+  breast-cancer-diag/0 OK acc=0.9649 auc=0.9907 bal=0.9623 t=8.07s
+  breast-cancer-diag/1 OK acc=0.9561 auc=0.9950 bal=0.9454 t=7.09s
+  breast-cancer-diag/2 OK acc=0.9474 auc=0.9911 bal=0.9484 t=7.48s
+haberman: n=306 f=3 k=2 domain=health
+  haberman/0 OK acc=0.7258 auc=0.6243 bal=0.5707 t=6.07s
+  haberman/1 OK acc=0.6290 auc=0.5768 bal=0.4851 t=5.96s
+  haberman/2 OK acc=0.7581 auc=0.7772 bal=0.5720 t=5.89s
+ALL DONE [1207s]
+ENV: model=ag torch=2.11.0+cu130 numpy=2.4.6 pandas=2.3.3 sklearn=1.9.0 tabpfn=na tabicl=na cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+skip credit-g (all seeds done)
+skip australian (all seeds done)
+skip bank-marketing (all seeds done)
+skip default-credit-clients (all seeds done)
+banknote-authentication: n=1372 f=4 k=2 domain=finance
+  banknote-authentication/0 OK acc=1.0000 auc=1.0000 bal=1.0000 t=13.7s
+  banknote-authentication/1 OK acc=1.0000 auc=1.0000 bal=1.0000 t=10.28s
+  banknote-authentication/2 OK acc=1.0000 auc=1.0000 bal=1.0000 t=9.94s
+skip creditcard-fraud (all seeds done)
+skip online-shoppers (all seeds done)
+skip german-credit-numeric (all seeds done)
+skip diabetes (all seeds done)
+skip breast-w (all seeds done)
+skip heart-statlog (all seeds done)
+skip thyroid (all seeds done)
+skip hepatitis (all seeds done)
+skip ilpd (all seeds done)
+skip breast-cancer-diag (all seeds done)
+skip haberman (all seeds done)
+ALL DONE [34s]

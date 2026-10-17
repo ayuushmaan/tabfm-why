@@ -1,0 +1,84 @@
+ENV: model=xgb torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 tabpfn=9.1.0 tabicl=2.2.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+credit-g: n=1000 f=20 k=2 domain=finance
+  credit-g/0 OK acc=0.7850 auc=0.8417 bal=0.7131 t=0.76s
+  credit-g/1 OK acc=0.8100 auc=0.8030 bal=0.7310 t=0.53s
+  credit-g/2 OK acc=0.7000 auc=0.7299 bal=0.6190 t=0.55s
+australian: n=690 f=14 k=2 domain=finance
+  australian/0 OK acc=0.8696 auc=0.9470 bal=0.8644 t=0.42s
+  australian/1 OK acc=0.8696 auc=0.9329 bal=0.8746 t=0.41s
+  australian/2 OK acc=0.8768 auc=0.9679 bal=0.8709 t=0.44s
+bank-marketing: n=45211 f=16 k=2 domain=finance
+  bank-marketing/0 OK acc=0.8970 auc=0.8828 bal=0.6661 t=0.48s
+  bank-marketing/1 OK acc=0.9140 auc=0.9321 bal=0.7237 t=0.46s
+  bank-marketing/2 OK acc=0.8950 auc=0.8920 bal=0.6579 t=0.56s
+default-credit-clients: n=30000 f=23 k=2 domain=finance
+  default-credit-clients/0 OK acc=0.8100 auc=0.7581 bal=0.6473 t=0.51s
+  default-credit-clients/1 OK acc=0.7940 auc=0.7348 bal=0.6218 t=0.58s
+  default-credit-clients/2 OK acc=0.8080 auc=0.7299 bal=0.6281 t=0.84s
+LOAD-FAIL taiwan-bankruptcy: ValueError: md5 checksum of local file for https://openml.org/data/v1/download/21829696/SantanderCustomerSatisfaction.arff does not match description: expected: 4f816b123bb
+creditcard-fraud: n=284807 f=29 k=2 domain=finance
+  creditcard-fraud/0 OK acc=1.0000 auc=nan bal=1.0000 t=0.18s
+  creditcard-fraud/1 OK acc=0.9990 auc=0.5000 bal=0.5000 t=0.15s
+  creditcard-fraud/2 OK acc=0.9980 auc=0.5000 bal=0.5000 t=0.15s
+online-shoppers: n=12330 f=17 k=2 domain=finance
+  online-shoppers/0 OK acc=0.8920 auc=0.9076 bal=0.7635 t=0.48s
+  online-shoppers/1 OK acc=0.8920 auc=0.9093 bal=0.7440 t=0.48s
+  online-shoppers/2 OK acc=0.8950 auc=0.9129 bal=0.7567 t=0.47s
+german-credit-numeric: n=1458 f=37 k=2 domain=finance
+  german-credit-numeric/0 OK acc=0.9007 auc=0.9403 bal=0.7046 t=0.7s
+  german-credit-numeric/1 OK acc=0.9178 auc=0.9502 bal=0.7502 t=0.97s
+  german-credit-numeric/2 OK acc=0.9178 auc=0.9426 bal=0.7502 t=1.58s
+diabetes: n=768 f=8 k=2 domain=health
+  diabetes/0 OK acc=0.8182 auc=0.8544 bal=0.7919 t=1.3s
+  diabetes/1 OK acc=0.7273 auc=0.7739 bal=0.6920 t=1.24s
+  diabetes/2 OK acc=0.7468 auc=0.7681 bal=0.7028 t=1.09s
+breast-w: n=699 f=9 k=2 domain=health
+  breast-w/0 OK acc=0.9571 auc=0.9826 bal=0.9574 t=0.66s
+  breast-w/1 OK acc=0.9500 auc=0.9826 bal=0.9520 t=0.23s
+  breast-w/2 OK acc=0.9714 auc=0.9946 bal=0.9633 t=0.25s
+heart-statlog: n=270 f=13 k=2 domain=health
+  heart-statlog/0 OK acc=0.7593 auc=0.8722 bal=0.7583 t=0.3s
+  heart-statlog/1 OK acc=0.8519 auc=0.9250 bal=0.8417 t=0.3s
+  heart-statlog/2 OK acc=0.7407 auc=0.8250 bal=0.7333 t=0.29s
+thyroid: n=3772 f=29 k=2 domain=health
+  thyroid/0 OK acc=0.9828 auc=0.9955 bal=0.9095 t=0.55s
+  thyroid/1 OK acc=0.9868 auc=0.9881 bal=0.9015 t=0.59s
+  thyroid/2 OK acc=0.9854 auc=0.9968 bal=0.9008 t=1.52s
+hepatitis: n=155 f=19 k=2 domain=health
+  hepatitis/0 OK acc=0.8065 auc=0.7200 bal=0.6900 t=0.23s
+  hepatitis/1 OK acc=0.8710 auc=0.9533 bal=0.6667 t=0.37s
+  hepatitis/2 OK acc=0.9355 auc=0.8800 bal=0.8333 t=0.32s
+ilpd: n=583 f=10 k=2 domain=health
+  ilpd/0 OK acc=0.7350 auc=0.7991 bal=0.6309 t=0.42s
+  ilpd/1 OK acc=0.6667 auc=0.7137 bal=0.5046 t=0.76s
+  ilpd/2 OK acc=0.7265 auc=0.7119 bal=0.6249 t=0.99s
+breast-cancer-diag: n=569 f=30 k=2 domain=health
+  breast-cancer-diag/0 OK acc=0.9561 auc=0.9921 bal=0.9554 t=0.36s
+  breast-cancer-diag/1 OK acc=0.9561 auc=0.9934 bal=0.9454 t=0.72s
+  breast-cancer-diag/2 OK acc=0.9649 auc=0.9891 bal=0.9673 t=0.72s
+haberman: n=306 f=3 k=2 domain=health
+  haberman/0 OK acc=0.6613 auc=0.6352 bal=0.6087 t=0.33s
+  haberman/1 OK acc=0.5968 auc=0.5387 bal=0.4633 t=0.32s
+  haberman/2 OK acc=0.6452 auc=0.6386 bal=0.5774 t=0.32s
+ALL DONE [592s]
+ENV: model=xgb torch=2.11.0+cu130 numpy=2.4.6 pandas=3.0.3 sklearn=1.9.0 tabpfn=9.1.0 tabicl=2.2.0 cuda=NVIDIA RTX PRO 6000 Blackwell Server Edition
+skip credit-g (all seeds done)
+skip australian (all seeds done)
+skip bank-marketing (all seeds done)
+skip default-credit-clients (all seeds done)
+banknote-authentication: n=1372 f=4 k=2 domain=finance
+  banknote-authentication/0 OK acc=0.9964 auc=0.9999 bal=0.9967 t=0.55s
+  banknote-authentication/1 OK acc=0.9964 auc=1.0000 bal=0.9967 t=0.27s
+  banknote-authentication/2 OK acc=0.9927 auc=0.9998 bal=0.9926 t=0.27s
+skip creditcard-fraud (all seeds done)
+skip online-shoppers (all seeds done)
+skip german-credit-numeric (all seeds done)
+skip diabetes (all seeds done)
+skip breast-w (all seeds done)
+skip heart-statlog (all seeds done)
+skip thyroid (all seeds done)
+skip hepatitis (all seeds done)
+skip ilpd (all seeds done)
+skip breast-cancer-diag (all seeds done)
+skip haberman (all seeds done)
+ALL DONE [8s]
