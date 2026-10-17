@@ -15,19 +15,19 @@ for d in ["roster", "ceiling", "probes"]:
 plt.rcParams.update({"font.size": 9, "figure.dpi": 150})
 
 # ---------- 1. vehicle leaderboard ----------
-veh = {"TabPFN*": 0.924, "TabDPT": 0.8784, "TabICL*": 0.876, "Mitra": 0.8588,
+veh = {"TabPFN": 0.9157, "TabDPT": 0.8784, "TabICL": 0.8824, "Mitra": 0.8588,
        "AutoGluon": 0.8294, "LimiX": 0.8137, "XGBoost": 0.7804}
-names = ["TabPFN*", "TabDPT", "TabICL*", "Mitra", "AutoGluon", "LimiX", "XGBoost"]
+names = ["TabPFN", "TabICL", "TabDPT", "Mitra", "AutoGluon", "LimiX", "XGBoost"]
 vals = [veh[n] for n in names]
-cols = ["tab:gray" if n.endswith("*") else ("tab:blue" if n in ("TabDPT", "Mitra", "LimiX") else
-        ("tab:red" if n == "AutoGluon" else "tab:green")) for n in names]
+cols = ["tab:blue" if n in ("TabPFN", "TabICL", "TabDPT", "Mitra", "LimiX") else
+        ("tab:red" if n == "AutoGluon" else "tab:green") for n in names]
 fig, ax = plt.subplots(figsize=(7, 3.6))
-ax.barh(names, vals, color=cols, xerr=[0.03 if n.endswith("*") else 0.015 for n in names],
+ax.barh(names, vals, color=cols, xerr=[0.015 if True else 0.03 for n in names],
         capsize=3)
 ax.set_xlim(0.7, 0.97)
 ax.set_xlabel("accuracy (3-seed mean)")
 ax.set_title("Vehicle: every foundation prior beats every tuned non-FM")
-fig.text(0.5, 0.01, "*TabPFN/TabICL: prior 5-way snapshot (docs/MOLAB.md); rest: this session, pinned env",
+fig.text(0.5, 0.01, "All models: this session, 3 seeds, pinned env",
          fontsize=7, color="gray", ha="center")
 fig.tight_layout(rect=[0, 0.06, 1, 1])
 fig.savefig(os.path.join(F, "roster", "vehicle_leaderboard.png"))
@@ -112,16 +112,21 @@ xgb = pd.read_csv(os.path.join(R, "xgboost", "xgb_roster.csv"))
 ag = pd.read_csv(os.path.join(R, "ceiling", "ag_ceiling.csv"))
 lx = pd.read_csv(os.path.join(R, "roster", "limix_full.csv"))
 mi = pd.read_csv(os.path.join(R, "roster", "mitra_full.csv"))
-models = [("TabDPT", td), ("XGBoost", xgb), ("AutoGluon", ag), ("LimiX", lx), ("Mitra", mi)]
+tp = pd.read_csv(os.path.join(R, "roster", "tabpfn_roster.csv"))
+ti = pd.read_csv(os.path.join(R, "roster", "tabicl_roster.csv"))
+models = [("TabPFN", tp), ("TabICL", ti), ("TabDPT", td), ("XGBoost", xgb), ("AutoGluon", ag), ("LimiX", lx), ("Mitra", mi)]
 acc = td[td["metric"] == "acc"].groupby("dataset")["score"].mean()
 sets = list(acc.index)
 mat = np.full((len(sets), len(models)), np.nan)
 for j, (_, df) in enumerate(models):
-    g = df[df["metric"] == "acc"].groupby("dataset")["score"].mean()
+    if "metric" in df.columns:
+        g = df[df["metric"] == "acc"].groupby("dataset")["score"].mean()
+    else:
+        g = df[df["dataset"].isin(sets)].groupby("dataset")["score"].mean()
     for i, s in enumerate(sets):
         if s in g.index:
             mat[i, j] = g[s]
-fig, ax = plt.subplots(figsize=(7.5, 6.5))
+fig, ax = plt.subplots(figsize=(8.5, 6.5))
 im = ax.imshow(mat, aspect="auto", vmin=0.55, vmax=1.0, cmap="YlGn")
 ax.set_xticks(range(len(models)))
 ax.set_xticklabels([m for m, _ in models])
@@ -133,7 +138,7 @@ for i in range(len(sets)):
             ax.text(j, i, f"{mat[i, j]:.3f}", ha="center", va="center", fontsize=7,
                     color="white" if mat[i, j] > 0.85 else "black")
 fig.colorbar(im, ax=ax, label="accuracy (3-seed mean)")
-ax.set_title("Roster: 5 models x 13 sets (blank = class-cap, letter has 26 classes)")
+ax.set_title("Roster: 7 models x 13 sets (blank = class-cap, letter has 26 classes)")
 fig.tight_layout()
 fig.savefig(os.path.join(F, "roster", "roster_heatmap.png"))
 print("roster_heatmap.png")
