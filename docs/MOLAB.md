@@ -60,7 +60,29 @@ proper seeds there is NO model × dilution effect at all on diabetes to 100 nois
 FMs are uniformly dilution-robust. Lesson upgraded: single-seed probe deltas are worthless;
 stress with ≥3 seeds before any claim.
 
-## Mitra usage (resolved)
+## Update: TabPFN-3.5 + TabICLv2 full 16-set roster (Oct 2026, box 3) — CLASS-CAP CLAIM PARTLY RETRACTED
+
+96 fits (2 models × 16 sets × 3 seeds), **0 failures**, `results/roster/{tabpfn,tabicl}_roster.csv`
+(48 rows each), raw stdout in `results/roster/logs/`. Env pinned and logged per row:
+torch 2.11.0+cu130, numpy 2.4.6, pandas 3.0.3, sklearn 1.9.0, tabpfn 9.1.0, tabicl 2.2.0.
+
+**Letter (26 classes) RAN on both** — the ≤10-class decoder cap is LimiX/Mitra-only, NOT
+TabPFN/TabICL as previously assumed. 3-seed means:
+
+| model | letter | vehicle | balance | 13-set cls mean |
+|---|---|---|---|---|
+| TabPFN-3.5 | **0.956** | 0.916 | 0.992 | **0.9034** |
+| TabICLv2 | 0.941 | 0.882 | 0.989 | 0.8974 |
+| TabDPT | 0.942 | 0.878 | 0.984 | 0.8990 |
+
+TabPFN letter (0.956) **beats TabDPT (0.942)** — the "TabDPT owns many-class" claim is
+retracted. Regression (RMSE, lower better): TabPFN boston 2.57 / cpu_act 2.06 / puma8NH 3.20;
+TabICL 3.07 / 2.13 / 3.22; vs TabDPT 2.87 / 2.16 / 3.15. Both stored as positive RMSE to
+match the roster schema (`dataset,kind,model,seed,metric,score,env`).
+
+Heatmap now 7 models × 13 sets; blanks are **letter × LimiX** and **letter × Mitra** only
+(class-cap, verified in isolated processes). Vehicle leaderboard un-starred (all real runs).
+
 
 `TabularPredictor(hyperparameters={"MITRA": {}})` is flaky in this env (read-only array error
 inside `sklearn_interface._train_ensemble`, pandas-3/AutoGluon friction). Reliable path: direct

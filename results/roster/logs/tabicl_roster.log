@@ -1,0 +1,59 @@
+INFO: You are downloading 'tabicl-classifier-v2-20260212.ckpt', the latest best-performing version, used in our TabICLv2 paper.
+
+Checkpoint 'tabicl-classifier-v2-20260212.ckpt' not cached.
+ Downloading from Hugging Face Hub (jingang/TabICL).
+
+credit-g 0 OK 0.785
+credit-g 1 OK 0.79
+credit-g 2 OK 0.72
+diabetes 0 OK 0.7922077922077922
+diabetes 1 OK 0.7467532467532467
+diabetes 2 OK 0.7467532467532467
+breast-w 0 OK 0.9642857142857143
+breast-w 1 OK 0.95
+breast-w 2 OK 0.9714285714285714
+vehicle 0 OK 0.8764705882352941
+vehicle 1 OK 0.8764705882352941
+vehicle 2 OK 0.8941176470588236
+segment 0 OK 0.9935064935064936
+segment 1 OK 0.9891774891774892
+segment 2 OK 0.9913419913419913
+heart-statlog 0 OK 0.8148148148148148
+heart-statlog 1 OK 0.8888888888888888
+heart-statlog 2 OK 0.7962962962962963
+balance-scale 0 OK 0.992
+balance-scale 1 OK 0.992
+balance-scale 2 OK 0.984
+tic-tac-toe 0 OK 0.984375
+tic-tac-toe 1 OK 0.9947916666666666
+tic-tac-toe 2 OK 0.9895833333333334
+letter 0 OK 0.944
+letter 1 OK 0.942
+letter 2 OK 0.937
+mushroom 0 OK 0.995
+mushroom 1 OK 1.0
+mushroom 2 OK 1.0
+iris 0 OK 1.0
+iris 1 OK 0.9666666666666667
+iris 2 OK 1.0
+car 0 OK 0.9695121951219512
+car 1 OK 0.9695121951219512
+car 2 OK 0.9801829268292683
+dresses-sales 0 OK 0.64
+dresses-sales 1 OK 0.6
+dresses-sales 2 OK 0.53
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Checkpoint 'tabicl-regressor-v2-20260212.ckpt' not cached.
+ Downloading from Hugging Face Hub (jingang/TabICL).
+
+boston 0 OK -4.143174525469239
+boston 1 OK -2.352869040221374
+boston 2 OK -2.7225698478675513
+cpu_act 0 OK -2.1421338629784983
+cpu_act 1 OK -2.075006270990019
+cpu_act 2 OK -2.1681487529369092
+puma8NH 0 OK -3.1848752511222442
+puma8NH 1 OK -3.219698454056677
+puma8NH 2 OK -3.2525323263668877
+
+

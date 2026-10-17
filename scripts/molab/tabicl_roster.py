@@ -77,13 +77,13 @@ def prep(X, y, kind):
 def main():
     import torch
     import sklearn
-    import tabicl
+    import importlib.metadata as md
 
     if torch.cuda.is_available():
         devname = torch.cuda.get_device_name(0)
     else:
         devname = "cpu"
-    env = f"torch={torch.__version__} numpy={np.__version__} pandas={pd.__version__} sklearn={sklearn.__version__} tabicl={tabicl.__version__} cuda={devname}"
+    env = f"torch={torch.__version__} numpy={np.__version__} pandas={pd.__version__} sklearn={sklearn.__version__} tabicl={md.version('tabicl')} cuda={devname}"
     done = set()
     try:
         d = pd.read_csv(OUT)
