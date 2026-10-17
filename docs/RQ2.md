@@ -20,7 +20,7 @@ nonlinear meta-model or the custom interaction/axis probes).
 - vs LightGBM: mean +0.032. Only loss: tic-tac-toe (−0.016, LightGBM 1.000).
 - vs Linear: mean +0.069. Biggest: car (+0.311), tic-tac-toe (+0.309).
 - Regression: TabPFN sweeps boston/cpu_act/puma8NH + california.
-- FM wins 11/15 new cls sets; baselines take tic-tac-toe (LGBM), letter (RF, FMs absent at 26 classes), iris (Linear tie), mushroom (tie).
+- FM wins 11/15 new cls sets; baselines take tic-tac-toe (LGBM), iris (Linear tie), mushroom (tie). **CORRECTION (Oct 2026 full roster):** the earlier "letter (RF, FMs absent at 26 classes)" line was wrong — TabPFN-3.5 (0.956) and TabICLv2 (0.941) both run letter cleanly; only LimiX/Mitra are class-capped. See `docs/MOLAB.md`.
 
 ## Win prediction: negative
 
@@ -37,7 +37,8 @@ FM-minus-baseline gap correlated negatively with 1NN (ρ≈−0.56, p≈0.01) an
 ## TabDPT third-prior column (24 sets, MOLAB `/marimo/roster_TABDPt.csv`)
 
 TabDPT ≈ TabICL tier almost everywhere (vehicle 0.888, balance 0.984, tic-tac-toe 0.984);
-unique value: letter 0.942 where TabPFN/TabICL cannot run (26 classes), mushroom 0.999.
+mushroom 0.999. **CORRECTION (Oct 2026):** TabDPT does NOT uniquely own letter — TabPFN-3.5
+scores 0.956 (above TabDPT's 0.942) and TabICLv2 0.941 (tied) on the 26-class task.
 No dataset where real-data prior beats both synthetic priors — the "messy real data" hypothesis
 for TabDPT remains unconfirmed on this suite. Regression: boston 2.873 / cpu_act 2.196 /
 puma8NH 2.576 (all trail TabPFN).

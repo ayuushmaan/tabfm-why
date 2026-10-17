@@ -61,7 +61,9 @@ gap-closed = (after−before)/(winner−before), held-out acceptance, no-degrada
 
 Means over 21 cls sets: TabPFN top, +0.037 vs RF (range −0.002/+0.189), +0.032 vs LightGBM
 (only loss tic-tac-toe −0.016), +0.069 vs Linear (car +0.311). FM wins 11/15 new sets;
-baselines take tic-tac-toe (LGBM 1.000), letter (RF; FMs absent at 26 classes), iris (tie).
+baselines take tic-tac-toe (LGBM 1.000), iris (tie). [CORRECTION, see PAPER_V5: the earlier
+"letter (RF; FMs absent at 26 classes)" claim was wrong — TabPFN-3.5 runs letter at 0.956 and
+TabICLv2 at 0.941; only LimiX/Mitra are class-capped.]
 Regression: TabPFN sweeps all 4. Five-way snapshot: LimiX-2M leads diabetes (0.818), trails
 vehicle (0.829 vs 0.924); TabDPT ties TabICL; Mitra 0.77. Significance: TabPFN≈TabICL (0.23);
 FM–RF n.s. (0.07); FMs > rest (<0.05). Probes: XOR 0.97–0.99 vs 0.51; MCAR ≤0.009 at 30%;
